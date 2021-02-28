@@ -1,17 +1,25 @@
+import editors.EditorHandler;
+import gui.CustomJFrame;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
-import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Objects;
 
 public class Main {
 
     public static int instanceCount;
     public static boolean showWarningMessage = true;
+    public static boolean terminateWhenWindowClose = false;
 
     public static void main(String[] args) {
+        if (getFreeMemory() / 1024 / 1024 < 512) {
+            JOptionPane.showMessageDialog(null, "The current JVM memory margin is too low, no matter you close any window, the entire program will stop running, please pay attention to save your work");
+            terminateWhenWindowClose = true;
+        }
         SwingUtilities.invokeLater(() -> {
             try {
                 createWindow();
@@ -21,20 +29,36 @@ public class Main {
         });
     }
 
+    public static double getFreeMemory() {
+        Runtime time = Runtime.getRuntime();
+        System.out.println("Free Memory: " + time.freeMemory() + " bytes");
+        return time.freeMemory();
+    }
+
 
     public static void createWindow() throws IOException {
         JPanel panel = new JPanel();
-        placeComponents(panel);
         Image icon = ImageIO.read(new URL("http://timicasto.sukazyo.cc:12000/logo.png"));
-        JFrame frame = new JFrame("ModpackModifier");
+        JFrame frame = new JFrame();
+        frame.setTitle("Modpack Modifier SNAPSHOT 1.0 -by QuantumHardwareStudio");
         frame.setIconImage(icon);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        if (terminateWhenWindowClose) {
+            System.out.println("Set to true");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        }
         frame.pack();
         panel.setOpaque(false);
+        JPanel panel2 = (JPanel)frame.getContentPane();
+        panel2.setOpaque(false);
+        Image bg = Utils.blur(ImageIO.read(new URL("http://timicasto.sukazyo.cc:12000/randompicture.php")), 86);
+        JPanel panel1 = new CustomJFrame.BackgroundPanel(bg);
+        panel1.setSize(480, 280);
+        frame.add(panel1);
+        System.out.println("panel bg is " + panel1);
+        panel.setOpaque(false);
         frame.getContentPane().add(panel);
-        JPanel panel1 = (JPanel)frame.getContentPane();
-        panel1.setOpaque(false);
         frame.setSize(480, 280);
+        placeComponents(panel);
         frame.setResizable(false);
         frame.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
         frame.setVisible(true);
@@ -88,7 +112,11 @@ public class Main {
         label.setBounds(10, 20, 120, 25);
         panel.add(label);
         propertyCrT.addActionListener(e -> {
-            createNewWindowByButton("ZenScript(Craft Tweaker) editor", 1600, 900);
+            try {
+                EditorHandler.initCrT(Objects.requireNonNull(createNewWindowByButton("ZenScript(Craft Tweaker) editor", 1600, 900)));
+            } catch (InterruptedException interruptedException) {
+                interruptedException.printStackTrace();
+            }
         });
     }
 
@@ -101,7 +129,7 @@ public class Main {
         panel.add(background);
     }
 
-    public static void createInstance(String title, int width, int height) throws IOException {
+    public static JFrame createInstance(String title, int width, int height) throws IOException {
         JFrame crt = new JFrame(title);
         Image icon = ImageIO.read(new URL("http://timicasto.sukazyo.cc:12000/logo.png"));
         crt.setIconImage(icon);
@@ -109,29 +137,33 @@ public class Main {
         crt.setResizable(false);
         crt.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
         crt.setVisible(true);
+        return crt;
     }
 
 
-    public static void createNewWindowByButton(String title, int width, int height) {
+    public static JFrame createNewWindowByButton(String title, int width, int height) {
         if (instanceCount < 8) {
             if (showWarningMessage) {
                 int response = JOptionPane.showConfirmDialog(null, "When you close any window, the entire program will be closed accordingly, please pay attention to save your work, \n Do you want to continue to create a new window or instance? \n If you don't want to see this message again, please click Cancel");
                 switch (response) {
                     case 0:
                         try {
-                            createWindow();
+                            JFrame frame = createInstance(title, width, height);
+                            JOptionPane.showMessageDialog(null, "Press Ctrl-Q in editor window to view hot keys");
                             instanceCount++;
+                            return frame;
                         } catch (IOException ioException) {
                             ioException.printStackTrace();
                         }
                         break;
                     case 1:
-                        return;
+                        return null;
                     case 2:
                         showWarningMessage = false;
                         try {
-                            createInstance(title, width, height);
+                            JFrame frame = createInstance(title, width, height);
                             instanceCount++;
+                            return frame;
                         } catch (IOException ioException) {
                             ioException.printStackTrace();
                         }
@@ -140,8 +172,9 @@ public class Main {
                 }
             } else {
                 try {
-                    createInstance(title, width, height);
+                    JFrame frame = createInstance(title, width, height);
                     instanceCount++;
+                    return frame;
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }
@@ -149,5 +182,6 @@ public class Main {
         } else {
             JOptionPane.showMessageDialog(null,"Too many instances, you can't create a new one!");
         }
+        return null;
     }
 }
