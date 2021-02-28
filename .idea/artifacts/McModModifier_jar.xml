@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="McModModifier:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/McModModifier_jar</output-path>
+    <root id="root">
+      <element id="archive" name="McModModifier.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

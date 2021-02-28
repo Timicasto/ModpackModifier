@@ -1,12 +1,16 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Method;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Main {
+
+    public static int instanceCount;
+    public static boolean showWarningMessage = true;
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             try {
@@ -17,38 +21,133 @@ public class Main {
         });
     }
 
+
     public static void createWindow() throws IOException {
-        //JFrame.setDefaultLookAndFeelDecorated(true);
-        JFrame frame = new JFrame("ModpackModifier");
+        JPanel panel = new JPanel();
+        placeComponents(panel);
         Image icon = ImageIO.read(new URL("http://timicasto.sukazyo.cc:12000/logo.png"));
+        JFrame frame = new JFrame("ModpackModifier");
         frame.setIconImage(icon);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel panel = new JPanel();
-        frame.add(panel);
-        placeComponents(panel);
         frame.pack();
+        panel.setOpaque(false);
+        frame.getContentPane().add(panel);
+        JPanel panel1 = (JPanel)frame.getContentPane();
+        panel1.setOpaque(false);
+        frame.setSize(480, 280);
+        frame.setResizable(false);
+        frame.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
         frame.setVisible(true);
-        frame.setSize(600, 400);
     }
 
     public static void placeComponents(JPanel panel) {
         panel.setLayout(null);
-        JLabel label = new JLabel("Select A Property");
-        label.setBounds(10, 20, 120, 25);
-        panel.add(label);
-        JLabel bg = new JLabel(new Icon() {
-        });
         JButton propertyCrT = new JButton("ZenScript(Craft Tweaker)");
         propertyCrT.setBounds(10, 80, 200, 25);
         panel.add(propertyCrT);
         JButton propertyModularMachinery = new JButton("Json(Modular Machinery)");
         propertyModularMachinery.setBounds(10, 120, 200, 25);
+        propertyModularMachinery.addActionListener(e -> {
+            createNewWindowByButton("Json(Modular Machinery) Editor", 800, 600);
+        });
         panel.add(propertyModularMachinery);
         JButton propertyARXML = new JButton("XML(Advanced Rocketry)");
         propertyARXML.setBounds(10, 160, 200, 25);
+        propertyARXML.addActionListener(e -> {
+            createNewWindowByButton("XML(Advanced Rocketry) Editor", 1024, 768);
+        });
         panel.add(propertyARXML);
-        JButton propertyCM3 = new JButton("JSON(Compact Machines 3)");
+        JButton propertyCM3 = new JButton("Json(Compact Machines 3)");
         propertyCM3.setBounds(10, 200, 200, 25);
+        propertyCM3.addActionListener(e -> {
+            createNewWindowByButton("Json(Compact Machines 3) Editor", 800, 600);
+        });
         panel.add(propertyCM3);
+        JButton newInstance = new JButton("Create A New Instance");
+        newInstance.setBounds(220, 20, 200, 20);
+        newInstance.addActionListener(e -> {
+            try {
+                if (instanceCount < 8) {
+                    if (instanceCount == 0 && showWarningMessage) {
+                        JOptionPane.showConfirmDialog(null, "When you close any window, the entire program will be closed accordingly, please pay attention to save your work, \n Do you want to continue to create a new window or instance? \n If you don't want to see this message again, please click Cancel");
+                    }
+                    createWindow();
+                    instanceCount++;
+                    System.out.println("Current instances : " + instanceCount);
+                } else {
+                    System.out.println("Too many instances!");
+                    JOptionPane.showMessageDialog(null, "Too many instances, you can't create another one");
+                }
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
+        panel.add(newInstance);
+        JLabel label = new JLabel("Select A Property");
+        label.setOpaque(true);
+        label.setBounds(10, 20, 120, 25);
+        panel.add(label);
+        propertyCrT.addActionListener(e -> {
+            createNewWindowByButton("ZenScript(Craft Tweaker) editor", 1600, 900);
+        });
+    }
+
+    @Deprecated
+    public static void setBak(JPanel panel) throws MalformedURLException {
+        panel.setLayout(null);
+        ImageIcon img = new ImageIcon(new URL("http://timicasto.sukazyo.cc:12000/randompicture.php"));
+        JLabel background = new JLabel(img);
+        background.setBounds(0, 0, 960, 540);
+        panel.add(background);
+    }
+
+    public static void createInstance(String title, int width, int height) throws IOException {
+        JFrame crt = new JFrame(title);
+        Image icon = ImageIO.read(new URL("http://timicasto.sukazyo.cc:12000/logo.png"));
+        crt.setIconImage(icon);
+        crt.setSize(width, height);
+        crt.setResizable(false);
+        crt.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
+        crt.setVisible(true);
+    }
+
+
+    public static void createNewWindowByButton(String title, int width, int height) {
+        if (instanceCount < 8) {
+            if (showWarningMessage) {
+                int response = JOptionPane.showConfirmDialog(null, "When you close any window, the entire program will be closed accordingly, please pay attention to save your work, \n Do you want to continue to create a new window or instance? \n If you don't want to see this message again, please click Cancel");
+                switch (response) {
+                    case 0:
+                        try {
+                            createWindow();
+                            instanceCount++;
+                        } catch (IOException ioException) {
+                            ioException.printStackTrace();
+                        }
+                        break;
+                    case 1:
+                        return;
+                    case 2:
+                        showWarningMessage = false;
+                        try {
+                            createInstance(title, width, height);
+                            instanceCount++;
+                        } catch (IOException ioException) {
+                            ioException.printStackTrace();
+                        }
+                    default:
+                        break;
+                }
+            } else {
+                try {
+                    createInstance(title, width, height);
+                    instanceCount++;
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null,"Too many instances, you can't create a new one!");
+        }
     }
 }
