@@ -112,11 +112,7 @@ public class Main {
         label.setBounds(10, 20, 120, 25);
         panel.add(label);
         propertyCrT.addActionListener(e -> {
-            try {
-                EditorHandler.initCrT(Objects.requireNonNull(createNewWindowByButton("ZenScript(Craft Tweaker) editor", 1600, 900)));
-            } catch (InterruptedException interruptedException) {
-                interruptedException.printStackTrace();
-            }
+            EditorHandler.initCrT(Objects.requireNonNull(createNewWindowByButton("ZenScript(Craft Tweaker) editor", 1600, 900)));
         });
     }
 

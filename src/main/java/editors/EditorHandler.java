@@ -2,11 +2,9 @@ package editors;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Scanner;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 public class EditorHandler {
-    public static void initCrT(JFrame frame) throws InterruptedException {
+    public static void initCrT(JFrame frame) {
         frame.setLayout(null);
         frame.setResizable(false);
         JPanel panel = new JPanel();
@@ -37,6 +35,7 @@ public class EditorHandler {
         newFile.addActionListener(e -> {
 
         });
+
     }
 
     static class DrawLine extends JPanel {
