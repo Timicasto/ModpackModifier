@@ -11,6 +11,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class EditorHandler {
+
+    public static int operationCount = 0;
+
     public static void initCrT(JFrame frame) {
         frame.setLayout(null);
         frame.setResizable(false);
@@ -109,22 +112,28 @@ public class EditorHandler {
                 for (int i = 0 ; i < typeCount ; i++) {
                     System.out.println("Running once");
                     JLabel label1 = new JLabel("input: ");
-                    frame.add(label1);
+                    panel.add(label1);
                     label.setBounds(20, 80 + 30 * i, 80, 20);
                     JTextField field = new JTextField();
-                    frame.add(field);
+                    panel.add(field);
                     field.setBounds(120, 80 + 30 * i, 140, 20);
                     System.out.println("label and textfield are " + label1 + "  " + field);
                 }
-            });
-            JLabel label1 = new JLabel("output: ");
-            frame.add(label1);
-            label1.setBounds(20, 80 + 30 * ((int)box.getSelectedItem() + 1), 80,20);
-            frame.add(new JLabel("output: "));
-            frame.add(new JTextField());
-            JButton buttonFinish = new JButton("Create");
-            buttonFinish.addActionListener(e -> {
-
+                JLabel label2 = new JLabel("output: ");
+                panel.add(label2);
+                label2.setBounds(20, 80 + 30 * ((int)box.getSelectedItem() + 1), 80,20);
+                System.out.println(label2);
+                JTextField field1 = new JTextField();
+                panel.add(field1);
+                field1.setBounds(120, 80 + 30 * ((int)box.getSelectedItem() + 1), 140, 20);
+                System.out.println(field1);
+                JButton buttonFinish = new JButton("Create");
+                buttonFinish.setBounds(80, 80 + 30 * ((int)box.getSelectedItem() + 2), 120, 40);
+                panel.add(buttonFinish);
+                buttonFinish.addActionListener(e1 -> {
+                    operationCount++;
+                    ZSHelper.operations.put(operationCount, new ZSHelper.ZSOperation(ZSHelper.OperationType.ADD_VANILLA_SHAPELESS_CRAFTING, new String[]{}, new String[]{}, 0, 0));
+                });
             });
             frame.add(panel);
         }

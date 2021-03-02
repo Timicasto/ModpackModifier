@@ -1,12 +1,18 @@
 package tweak;
 
+import com.sun.istack.internal.Nullable;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class ZSHelper {
-    public Map<Integer, ZSOperation> operations = new HashMap<>();
-    public static class ZSOperation {
+    public static Map<Integer, ZSOperation> operations = new HashMap<>();
 
+    public static class ZSOperation {
+        public OperationType type;
+        public ZSOperation(OperationType type, String[] inputs, String[] outputs, @Nullable int energyIn, @Nullable int energyOut) {
+            this.type = type;
+        }
     }
 
     public enum OperationType {
