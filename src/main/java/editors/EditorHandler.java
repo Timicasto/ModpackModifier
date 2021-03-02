@@ -1,7 +1,14 @@
 package editors;
 
+import gui.PopMenu;
+import tweak.ZSHelper;
+
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.InputEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class EditorHandler {
     public static void initCrT(JFrame frame) {
@@ -30,8 +37,9 @@ public class EditorHandler {
         label.setBounds(40, 200, 120, 20);
         panel.add(label);
         frame.getContentPane().add(panel);
+        ZSEditorPopMenu menu = new ZSEditorPopMenu();
+        frame.setContentPane(menu);
         frame.setVisible(true);
-
         newFile.addActionListener(e -> {
 
         });
@@ -44,6 +52,120 @@ public class EditorHandler {
             graphics.drawLine(400, 0, 400, 900);
             graphics.drawLine(399, 0, 399, 900);
             graphics.drawLine(401, 0, 401, 900);
+        }
+    }
+
+    static class ZSEditorPopMenu extends JPanel {
+        JMenuItem ADD_VANILLA_SHAPELESS_CRAFTING, REMOVE_VANILLA_CRAFTING, MOD_AA_ATOMIC_RECONSTRUCTOR_ADD, MOD_AA_ATOMIC_RECONSTRUCTOR_REMOVE, MOD_AA_BALL_OF_FUR_ADD, MOD_AA_BALL_OF_FUR_REMOVE;
+
+        public ZSEditorPopMenu() {
+            JPopupMenu menu1 = new JPopupMenu();
+            menu1.add(ADD_VANILLA_SHAPELESS_CRAFTING = new JMenuItem(ZSHelper.OperationType.ADD_VANILLA_SHAPELESS_CRAFTING.name));
+            menu1.add(REMOVE_VANILLA_CRAFTING = new JMenuItem(ZSHelper.OperationType.REMOVE_VANILLA_CRAFTING.name));
+            menu1.add(MOD_AA_ATOMIC_RECONSTRUCTOR_ADD = new JMenuItem(ZSHelper.OperationType.MOD_AA_ATOMIC_RECONSTRUCTOR_ADD.name));
+            menu1.add(MOD_AA_ATOMIC_RECONSTRUCTOR_REMOVE = new JMenuItem(ZSHelper.OperationType.MOD_AA_ATOMIC_RECONSTRUCTOR_REMOVE.name));
+            menu1.add(MOD_AA_BALL_OF_FUR_ADD = new JMenuItem(ZSHelper.OperationType.MOD_AA_BALL_OF_FUR_ADD.name));
+            menu1.add(MOD_AA_BALL_OF_FUR_REMOVE = new JMenuItem(ZSHelper.OperationType.MOD_AA_BALL_OF_FUR_REMOVE.name));
+            ADD_VANILLA_SHAPELESS_CRAFTING.setAccelerator(KeyStroke.getKeyStroke('S', InputEvent.ALT_MASK));
+            REMOVE_VANILLA_CRAFTING.setAccelerator(KeyStroke.getKeyStroke('V', InputEvent.ALT_MASK));
+            MOD_AA_ATOMIC_RECONSTRUCTOR_ADD.setAccelerator(KeyStroke.getKeyStroke('R', InputEvent.ALT_MASK));
+            MOD_AA_ATOMIC_RECONSTRUCTOR_REMOVE.setAccelerator(KeyStroke.getKeyStroke('C', InputEvent.ALT_MASK));
+            MOD_AA_BALL_OF_FUR_ADD.setAccelerator(KeyStroke.getKeyStroke('F', InputEvent.ALT_MASK));
+            MOD_AA_BALL_OF_FUR_REMOVE.setAccelerator(KeyStroke.getKeyStroke('E', InputEvent.ALT_MASK));
+            addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    System.out.println("Pressed mouse button " + e.getButton());
+                    if (e.getButton() == MouseEvent.BUTTON3) {
+                        menu1.show(ZSEditorPopMenu.this, e.getX(), e.getY());
+                    }
+                }
+            });
+            initEvent();
+        }
+
+        private void initEvent() {
+            ADD_VANILLA_SHAPELESS_CRAFTING.addActionListener(e -> createNewShaplessCraftingFrame());
+            REMOVE_VANILLA_CRAFTING.addActionListener(e -> createNewRemoveCraftingFrame());
+            MOD_AA_ATOMIC_RECONSTRUCTOR_ADD.addActionListener(e -> createNewReconstructorAddFrame());
+            MOD_AA_ATOMIC_RECONSTRUCTOR_REMOVE.addActionListener(e -> createNewReconstructorRemoveFrame());
+            MOD_AA_BALL_OF_FUR_ADD.addActionListener(e -> createNewBallOfFurAddFrame());
+            MOD_AA_BALL_OF_FUR_REMOVE.addActionListener(e -> createNewBallOfFurRemoveFrame());
+        }
+
+        public static void createNewShaplessCraftingFrame() {
+            JFrame frame = createEmptyFrame(ZSHelper.OperationType.ADD_VANILLA_SHAPELESS_CRAFTING.name);
+            JPanel panel = new JPanel();
+            JLabel label = new JLabel("Input types: ");
+            panel.setBorder(new EmptyBorder(5, 5, 5, 5));
+            panel.add(label);
+            Integer[] choice = new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 9};
+            JComboBox<? extends Integer> box = new JComboBox<>(choice);
+            panel.add(box);
+            JButton buttonCompleteInputType = new JButton("Decided on the number of types");
+            panel.add(buttonCompleteInputType);
+            buttonCompleteInputType.addActionListener(e -> {
+                int typeCount = (int) box.getSelectedItem();
+                for (int i = 0 ; i < typeCount ; i++) {
+                    System.out.println("Running once");
+                    JLabel label1 = new JLabel("input: ");
+                    frame.add(label1);
+                    label.setBounds(20, 80 + 30 * i, 80, 20);
+                    JTextField field = new JTextField();
+                    frame.add(field);
+                    field.setBounds(120, 80 + 30 * i, 140, 20);
+                    System.out.println("label and textfield are " + label1 + "  " + field);
+                }
+            });
+            JLabel label1 = new JLabel("output: ");
+            frame.add(label1);
+            label1.setBounds(20, 80 + 30 * ((int)box.getSelectedItem() + 1), 80,20);
+            frame.add(new JLabel("output: "));
+            frame.add(new JTextField());
+            JButton buttonFinish = new JButton("Create");
+            buttonFinish.addActionListener(e -> {
+
+            });
+            frame.add(panel);
+        }
+
+        public static void createNewRemoveCraftingFrame() {
+            JFrame frame = createEmptyFrame(ZSHelper.OperationType.REMOVE_VANILLA_CRAFTING.name);
+            JPanel panel = new JPanel();
+            frame.add(panel);
+        }
+
+        public static void createNewReconstructorAddFrame() {
+            JFrame frame = createEmptyFrame(ZSHelper.OperationType.MOD_AA_ATOMIC_RECONSTRUCTOR_ADD.name);
+            JPanel panel = new JPanel();
+            frame.add(panel);
+        }
+
+        public static void createNewReconstructorRemoveFrame() {
+            JFrame frame = createEmptyFrame(ZSHelper.OperationType.MOD_AA_ATOMIC_RECONSTRUCTOR_REMOVE.name);
+            JPanel panel = new JPanel();
+            frame.add(panel);
+        }
+
+        public static void createNewBallOfFurAddFrame() {
+            JFrame frame = createEmptyFrame(ZSHelper.OperationType.MOD_AA_BALL_OF_FUR_ADD.name);
+            JPanel panel = new JPanel();
+            frame.add(panel);
+        }
+
+        public static void createNewBallOfFurRemoveFrame() {
+            JFrame frame = createEmptyFrame(ZSHelper.OperationType.MOD_AA_BALL_OF_FUR_REMOVE.name);
+            JPanel panel = new JPanel();
+            frame.add(panel);
+        }
+
+        public static JFrame createEmptyFrame(String title) {
+            JFrame frame = new JFrame(title);
+            frame.setSize(400, 800);
+            frame.setResizable(false);
+            frame.setVisible(true);
+            frame.setIconImage(PopMenu.icon);
+            return frame;
         }
     }
 }

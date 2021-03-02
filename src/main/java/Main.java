@@ -1,9 +1,11 @@
 import editors.EditorHandler;
 import gui.CustomJFrame;
+import gui.PopMenu;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -14,6 +16,7 @@ public class Main {
     public static int instanceCount;
     public static boolean showWarningMessage = true;
     public static boolean terminateWhenWindowClose = false;
+
 
     public static void main(String[] args) {
         if (getFreeMemory() / 1024 / 1024 < 512) {
@@ -38,10 +41,9 @@ public class Main {
 
     public static void createWindow() throws IOException {
         JPanel panel = new JPanel();
-        Image icon = ImageIO.read(new URL("http://timicasto.sukazyo.cc:12000/logo.png"));
         JFrame frame = new JFrame();
         frame.setTitle("Modpack Modifier SNAPSHOT 1.0 -by QuantumHardwareStudio");
-        frame.setIconImage(icon);
+        frame.setIconImage(PopMenu.icon);
         if (terminateWhenWindowClose) {
             System.out.println("Set to true");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
