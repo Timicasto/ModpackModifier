@@ -15,8 +15,10 @@ import java.util.Map;
 public class EditorHandler {
 
     public static int operationCount = 0;
+    private static JFrame main;
 
     public static void initCrT(JFrame frame) {
+        main = frame;
         frame.setLayout(null);
         frame.setResizable(false);
         JPanel panel = new JPanel();
@@ -49,6 +51,10 @@ public class EditorHandler {
 
         });
 
+    }
+
+    public static JFrame getMainFrame() {
+        return main;
     }
 
     static class DrawLine extends JPanel {
@@ -141,7 +147,11 @@ public class EditorHandler {
                     }
                     System.out.println(Arrays.toString(inputs));
                     ZSHelper.operations.put(operationCount, new ZSHelper.ZSOperation(ZSHelper.OperationType.ADD_VANILLA_SHAPELESS_CRAFTING, inputs, field1.getText(), 0, 0));
-                    ZSHelper.refresh(panel);
+                    try {
+                        ZSHelper.refresh(getMainFrame());
+                    } catch (InterruptedException interruptedException) {
+                        interruptedException.printStackTrace();
+                    }
                 });
             });
             frame.add(panel);
@@ -189,19 +199,31 @@ public class EditorHandler {
         }
     }
 
-    public static void refreshDisplay(Map<Integer, ZSHelper.ZSOperation> map, JPanel panel) {
+    public static void refreshDisplay(Map<Integer, ZSHelper.ZSOperation> map, JFrame panel) {
         for (int i = 0 ; i < map.size() ; i++) {
+            panel.setLayout(null);
             String[] inputs = map.get(i + 1).inputs;
             JLabel label = new JLabel("AddShaplessRecipe");
-            label.setBounds(25, 20 + (20 + 20 * inputs.length), 100, 20);
-            JLabel label1 = new JLabel("Index: " + i);
             panel.add(label);
+            label.setBounds(25, 20 + 120 * i, 160, 20);
+            JLabel label1 = new JLabel("Index: " + i);
             panel.add(label1);
+            label1.setBounds(25, 40 + 120 * i, 100, 20);
+            JLabel label3 = new JLabel("Inputs: ");
+            panel.add(label3);
+            label3.setBounds(25, 60 + 120 * i, 100, 20);
             for (int j = 0 ; j < inputs.length ; j++) {
                 JLabel label2 = new JLabel(inputs[j]);
-                label2.setBounds(40, 20 + (20 * j), 120, 20);
                 panel.add(label2);
+                label2.setBounds(80 + (100 * j), 60 + i * 100, 120, 20);
             }
+            JLabel label4 = new JLabel("Output: ");
+            panel.add(label4);
+            label4.setBounds(25, 80 + 100 * i, 100, 20);
+            JLabel label5 = new JLabel(map.get(i + 1).output);
+            panel.add(label5);
+            label5.setBounds(75, 80 + 100 * i, 100, 20);
         }
+        System.out.println(panel);
     }
 }

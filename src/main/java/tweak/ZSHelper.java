@@ -9,8 +9,9 @@ import java.util.Map;
 public class ZSHelper {
     public static Map<Integer, ZSOperation> operations = new HashMap<>();
 
-    public static void refresh(JPanel panel) {
+    public static void refresh(JFrame panel) throws InterruptedException {
         System.out.println(operations.toString());
+        Thread.sleep(1000);
         EditorHandler.refreshDisplay(operations, panel);
     }
 
