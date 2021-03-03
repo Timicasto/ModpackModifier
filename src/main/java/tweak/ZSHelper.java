@@ -1,17 +1,31 @@
 package tweak;
 
-import com.sun.istack.internal.Nullable;
+import editors.EditorHandler;
 
+import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ZSHelper {
     public static Map<Integer, ZSOperation> operations = new HashMap<>();
 
+    public static void refresh(JPanel panel) {
+        System.out.println(operations.toString());
+        EditorHandler.refreshDisplay(operations, panel);
+    }
+
     public static class ZSOperation {
         public OperationType type;
-        public ZSOperation(OperationType type, String[] inputs, String[] outputs, @Nullable int energyIn, @Nullable int energyOut) {
+        public String[] inputs;
+        public String output;
+        public int energyI, energyO;
+
+        public ZSOperation(OperationType type, String[] inputs, String outputs, int energyIn, int energyOut) {
             this.type = type;
+            this.inputs = inputs;
+            this.output = outputs;
+            this.energyI = energyIn;
+            this.energyO = energyOut;
         }
     }
 

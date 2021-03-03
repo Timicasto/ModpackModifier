@@ -9,6 +9,8 @@ import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Arrays;
+import java.util.Map;
 
 public class EditorHandler {
 
@@ -109,15 +111,16 @@ public class EditorHandler {
             panel.add(buttonCompleteInputType);
             buttonCompleteInputType.addActionListener(e -> {
                 int typeCount = (int) box.getSelectedItem();
+                JTextField[] variables = new JTextField[typeCount];
                 for (int i = 0 ; i < typeCount ; i++) {
                     System.out.println("Running once");
                     JLabel label1 = new JLabel("input: ");
                     panel.add(label1);
                     label.setBounds(20, 80 + 30 * i, 80, 20);
-                    JTextField field = new JTextField();
-                    panel.add(field);
-                    field.setBounds(120, 80 + 30 * i, 140, 20);
-                    System.out.println("label and textfield are " + label1 + "  " + field);
+                    variables[i] = new JTextField(i);
+                    panel.add(variables[i]);
+                    variables[i].setBounds(120, 80 + 30 * i, 140, 20);
+                    System.out.println("label and textfield are " + label1 + "  " + variables[i]);
                 }
                 JLabel label2 = new JLabel("output: ");
                 panel.add(label2);
@@ -132,11 +135,19 @@ public class EditorHandler {
                 panel.add(buttonFinish);
                 buttonFinish.addActionListener(e1 -> {
                     operationCount++;
-                    ZSHelper.operations.put(operationCount, new ZSHelper.ZSOperation(ZSHelper.OperationType.ADD_VANILLA_SHAPELESS_CRAFTING, new String[]{}, new String[]{}, 0, 0));
+                    String[] inputs = new String[typeCount];
+                    for (int i = 0 ; i < typeCount ; i++) {
+                        inputs[i] = variables[i].getText();
+                    }
+                    System.out.println(Arrays.toString(inputs));
+                    ZSHelper.operations.put(operationCount, new ZSHelper.ZSOperation(ZSHelper.OperationType.ADD_VANILLA_SHAPELESS_CRAFTING, inputs, field1.getText(), 0, 0));
+                    ZSHelper.refresh(panel);
                 });
             });
             frame.add(panel);
         }
+
+
 
         public static void createNewRemoveCraftingFrame() {
             JFrame frame = createEmptyFrame(ZSHelper.OperationType.REMOVE_VANILLA_CRAFTING.name);
@@ -170,11 +181,27 @@ public class EditorHandler {
 
         public static JFrame createEmptyFrame(String title) {
             JFrame frame = new JFrame(title);
-            frame.setSize(400, 800);
+            frame.setSize(400, 400);
             frame.setResizable(false);
             frame.setVisible(true);
             frame.setIconImage(PopMenu.icon);
             return frame;
+        }
+    }
+
+    public static void refreshDisplay(Map<Integer, ZSHelper.ZSOperation> map, JPanel panel) {
+        for (int i = 0 ; i < map.size() ; i++) {
+            String[] inputs = map.get(i + 1).inputs;
+            JLabel label = new JLabel("AddShaplessRecipe");
+            label.setBounds(25, 20 + (20 + 20 * inputs.length), 100, 20);
+            JLabel label1 = new JLabel("Index: " + i);
+            panel.add(label);
+            panel.add(label1);
+            for (int j = 0 ; j < inputs.length ; j++) {
+                JLabel label2 = new JLabel(inputs[j]);
+                label2.setBounds(40, 20 + (20 * j), 120, 20);
+                panel.add(label2);
+            }
         }
     }
 }
