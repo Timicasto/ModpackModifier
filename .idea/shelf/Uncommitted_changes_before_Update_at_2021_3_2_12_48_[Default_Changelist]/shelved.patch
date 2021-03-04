@@ -1,0 +1,178 @@
+Index: src/main/java/tweak/ZSHelper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package tweak;\r\n\r\nimport java.util.HashMap;\r\nimport java.util.Map;\r\n\r\npublic class ZSHelper {\r\n    public Map<Integer, ZSOperation> operations = new HashMap<>();\r\n    public static class ZSOperation {\r\n\r\n    }\r\n\r\n    public enum OperationType {\r\n        NULL(0, \"\"),\r\n        ADD_VANILLA_SHAPELESS_CRAFTING(1, \"recipes.addShapeless(!$^out_placeholder, !$^input_placeholder)\"),\r\n        REMOVE_VANILLA_CRAFTING(2, \"recipes.remove(!$^out_placeholder);\"),\r\n        MOD_AA_ATOMIC_RECONSTRUCTOR(3, \"\"),\r\n        MOD_AA_BALL_OF_FUR(4, \"\"),\r\n        MOD_AA_COMPOST(5, \"\"),\r\n        MOD_AA_CRUSHER(6, \"\"),\r\n        MOD_AA_EMPOWERER(7, \"\"),\r\n        MOD_AA_MINING_LENS(8, \"\"),\r\n        MOD_AA_OIL_GENERATOR(9, \"\"),\r\n        MOD_AA_TREASUTE_CHEST(10, \"\"),\r\n        MOD_BM_ALCHEMY_ARRAY(11, \"\"),\r\n        MOD_BM_ALCHEMY_TABLE(12, \"\"),\r\n        MOD_BM_BLOOD_ALTAR(13, \"\"),\r\n        MOD_BM_TARTARIC_TABLE(14, \"\"),\r\n        MOD_BOTANIA_BROW(15, \"\"),\r\n        MOD_BOTANIA_ELVEN_TRADE(16, \"\"),\r\n        MOD_BOTANIA_MANA_INFUSIONS(17, \"\"),\r\n        MOD_BOTANIA_ORECHID(18, \"\"),\r\n        MOD_BOTANIA_ORECHID_IGNEM(19, \"\"),\r\n        MOD_BOTANIA_PETAL_APOTHECARY(20, \"\"),\r\n        MOD_BOTANIA_PURE_DAISY(21, \"\"),\r\n        MOD_BOTANIA_RUNE_ALTAR(22, \"\"),\r\n        MOD_CHISEL_CARVING(23, \"\"),\r\n        MOD_EU2_CRUSHER(24, \"\");\r\n\r\n        public String command;\r\n        public int index;\r\n\r\n        public OperationType(int index, String command) {\r\n                this.command = command;\r\n                this.index = index;\r\n        }\r\n\r\n        public static String getSyntax() {\r\n                return command;\r\n        }\r\n\r\n        public static int getIndex() {\r\n                return index;\r\n        }\r\n\r\n        public static OperationType getTypeByIndex(int index) {\r\n                OperationType[] types = OperationType.values();\r\n                for (int i = 0 ; i < types.length ; i++) {\r\n                        if (types[i].getIndex() == index) {\r\n                                return types[i];\r\n                        }\r\n                }\r\n                return OperationType.NULL;\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/tweak/ZSHelper.java b/src/main/java/tweak/ZSHelper.java
+--- a/src/main/java/tweak/ZSHelper.java	(revision 58d1b9a5d2bd022afd6516781b3c7a0e3025dcc2)
++++ b/src/main/java/tweak/ZSHelper.java	(date 1614660519670)
+@@ -6,50 +6,58 @@
+ public class ZSHelper {
+     public Map<Integer, ZSOperation> operations = new HashMap<>();
+     public static class ZSOperation {
++        public ZSOperation() {
+ 
++        }
+     }
+ 
+     public enum OperationType {
+-        NULL(0, ""),
+-        ADD_VANILLA_SHAPELESS_CRAFTING(1, "recipes.addShapeless(!$^out_placeholder, !$^input_placeholder)"),
+-        REMOVE_VANILLA_CRAFTING(2, "recipes.remove(!$^out_placeholder);"),
+-        MOD_AA_ATOMIC_RECONSTRUCTOR(3, ""),
+-        MOD_AA_BALL_OF_FUR(4, ""),
+-        MOD_AA_COMPOST(5, ""),
+-        MOD_AA_CRUSHER(6, ""),
+-        MOD_AA_EMPOWERER(7, ""),
+-        MOD_AA_MINING_LENS(8, ""),
+-        MOD_AA_OIL_GENERATOR(9, ""),
+-        MOD_AA_TREASUTE_CHEST(10, ""),
+-        MOD_BM_ALCHEMY_ARRAY(11, ""),
+-        MOD_BM_ALCHEMY_TABLE(12, ""),
+-        MOD_BM_BLOOD_ALTAR(13, ""),
+-        MOD_BM_TARTARIC_TABLE(14, ""),
+-        MOD_BOTANIA_BROW(15, ""),
+-        MOD_BOTANIA_ELVEN_TRADE(16, ""),
+-        MOD_BOTANIA_MANA_INFUSIONS(17, ""),
+-        MOD_BOTANIA_ORECHID(18, ""),
+-        MOD_BOTANIA_ORECHID_IGNEM(19, ""),
+-        MOD_BOTANIA_PETAL_APOTHECARY(20, ""),
+-        MOD_BOTANIA_PURE_DAISY(21, ""),
+-        MOD_BOTANIA_RUNE_ALTAR(22, ""),
+-        MOD_CHISEL_CARVING(23, ""),
+-        MOD_EU2_CRUSHER(24, "");
++        NULL(0, "", ""),
++        ADD_VANILLA_SHAPELESS_CRAFTING(1, "recipes.addShapeless(!$^out_placeholder, !$^input_placeholder)", "Add Vanilla Shapless Crafting"),
++        REMOVE_VANILLA_CRAFTING(2, "recipes.remove(!$^out_placeholder);", "Remove Vanilla Crafting by output item"),
++        MOD_AA_ATOMIC_RECONSTRUCTOR(3, "mods.actuallyadditions.AtomicReconstructor.addRecipe(<minecraft:fire_charge>, <minecraft:coal:1>, 1000);", ""),
++        MOD_AA_BALL_OF_FUR(4, "", ""),
++        MOD_AA_COMPOST(5, "", ""),
++        MOD_AA_CRUSHER(6, "", ""),
++        MOD_AA_EMPOWERER(7, "", ""),
++        MOD_AA_MINING_LENS(8, "", ""),
++        MOD_AA_OIL_GENERATOR(9, "", ""),
++        MOD_AA_TREASUTE_CHEST(10, "", ""),
++        MOD_BM_ALCHEMY_ARRAY(11, "", ""),
++        MOD_BM_ALCHEMY_TABLE(12, "", ""),
++        MOD_BM_BLOOD_ALTAR(13, "", ""),
++        MOD_BM_TARTARIC_TABLE(14, "", ""),
++        MOD_BOTANIA_BROW(15, "", ""),
++        MOD_BOTANIA_ELVEN_TRADE(16, "", ""),
++        MOD_BOTANIA_MANA_INFUSIONS(17, "", ""),
++        MOD_BOTANIA_ORECHID(18, "", ""),
++        MOD_BOTANIA_ORECHID_IGNEM(19, "", ""),
++        MOD_BOTANIA_PETAL_APOTHECARY(20, "", ""),
++        MOD_BOTANIA_PURE_DAISY(21, "", ""),
++        MOD_BOTANIA_RUNE_ALTAR(22, "", ""),
++        MOD_CHISEL_CARVING(23, "", ""),
++        MOD_EU2_CRUSHER(24, "", "");
+ 
+         public String command;
+         public int index;
++        public String name;
+ 
+-        public OperationType(int index, String command) {
++        public OperationType(int index, String command, String name) {
+                 this.command = command;
+                 this.index = index;
++                this.name = name;
+         }
+ 
+         public static String getSyntax() {
+-                return command;
++                return this.command;
+         }
+ 
+         public static int getIndex() {
+-                return index;
++                return this.index;
++        }
++
++        public static String getName() {
++                return this.name;
+         }
+ 
+         public static OperationType getTypeByIndex(int index) {
+Index: .idea/SwingProject.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/SwingProject.iml b/.idea/SwingProject.iml
+new file mode 100644
+--- /dev/null	(date 1614660519843)
++++ b/.idea/SwingProject.iml	(date 1614660519843)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module external.linked.project.id="McModModifier:main" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="cc.sukazyo.timicasto" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$" />
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1614660307678)
++++ b/.idea/modules.xml	(date 1614660307678)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/SwingProject.iml" filepath="$PROJECT_DIR$/.idea/SwingProject.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1614660307720)
++++ b/.idea/vcs.xml	(date 1614660307720)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n          </set>\r\n        </option>\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	(revision 58d1b9a5d2bd022afd6516781b3c7a0e3025dcc2)
++++ b/.idea/gradle.xml	(date 1614660307728)
+@@ -1,10 +1,14 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
++        <option name="delegatedBuild" value="true" />
++        <option name="testRunner" value="GRADLE" />
+         <option name="distributionType" value="DEFAULT_WRAPPED" />
+         <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="gradleJvm" value="1.8" />
+         <option name="modules">
+           <set>
+             <option value="$PROJECT_DIR$" />

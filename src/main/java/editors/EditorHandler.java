@@ -1,6 +1,7 @@
 package editors;
 
 import gui.PopMenu;
+import io.ZSGenerator;
 import tweak.ZSHelper;
 
 import javax.swing.*;
@@ -51,6 +52,11 @@ public class EditorHandler {
 
         });
 
+        save.addActionListener(e -> {
+            for (int i = 0 ; i < ZSHelper.operations.size() ; i++) {
+                ZSGenerator.ZSLineCommand.generateCommandByItemIO(ZSHelper.operations.get(i + 1).type, ZSHelper.operations.get(i + 1).inputs, ZSHelper.operations.get(i + 1).output);
+            }
+        });
     }
 
     public static JFrame getMainFrame() {

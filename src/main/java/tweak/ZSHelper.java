@@ -32,12 +32,12 @@ public class ZSHelper {
 
     public enum OperationType {
         NULL(0, "", "", Operation.CROSS),
-        ADD_VANILLA_SHAPELESS_CRAFTING(1, "recipes.addShapeless(!$^out_placeholder, !$^input_placeholder)", "Add shapeless recipe", Operation.ADD),
-        REMOVE_VANILLA_CRAFTING(2, "recipes.remove(!$^out_placeholder);", "Remove recipe by output", Operation.REMOVE),
-        MOD_AA_ATOMIC_RECONSTRUCTOR_ADD(3, "mods.actuallyadditions.AtomicReconstructor.addRecipe(!$^input_placeholder, !$^out_placeholder, !$^energy_in_placeholder);", "Add a Atomic Reconstructor Recipe", Operation.ADD),
-        MOD_AA_ATOMIC_RECONSTRUCTOR_REMOVE(4, "mods.actuallyadditions.AtomicReconstructor.removeRecipe(!$^out_placeholder);", "Remove a Atomic Reconstructor Recipe by output", Operation.REMOVE),
-        MOD_AA_BALL_OF_FUR_ADD(5, "mods.actuallyadditions.BallOfFur.addReturn(!$^out_placeholder, !$^int_range_placeholder);", "Add a fur ball drop", Operation.ADD),
-        MOD_AA_BALL_OF_FUR_REMOVE(6, "mods.actuallyadditions.BallOfFur.removeReturn(!$^out_placeholder);", "Add a fur ball drop", Operation.ADD);
+        ADD_VANILLA_SHAPELESS_CRAFTING(1, "recipes.addShapeless(!out_placeholder, !input_placeholder)", "Add shapeless recipe", Operation.ADD),
+        REMOVE_VANILLA_CRAFTING(2, "recipes.remove(!out_placeholder);", "Remove recipe by output", Operation.REMOVE),
+        MOD_AA_ATOMIC_RECONSTRUCTOR_ADD(3, "mods.actuallyadditions.AtomicReconstructor.addRecipe(!input_placeholder, !out_placeholder, !energy_in_placeholder);", "Add a Atomic Reconstructor Recipe", Operation.ADD),
+        MOD_AA_ATOMIC_RECONSTRUCTOR_REMOVE(4, "mods.actuallyadditions.AtomicReconstructor.removeRecipe(!out_placeholder);", "Remove a Atomic Reconstructor Recipe by output", Operation.REMOVE),
+        MOD_AA_BALL_OF_FUR_ADD(5, "mods.actuallyadditions.BallOfFur.addReturn(!out_placeholder, !int_range_placeholder);", "Add a fur ball drop", Operation.ADD),
+        MOD_AA_BALL_OF_FUR_REMOVE(6, "mods.actuallyadditions.BallOfFur.removeReturn(!out_placeholder);", "Add a fur ball drop", Operation.ADD);
 
         /*MOD_AA_COMPOST_ADD(, ""),
         MOD_AA_CRUSHER(, ""),
