@@ -3,44 +3,53 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d930df7c-f184-4426-812f-995af7f8152b" name="Default Changelist" comment="3/4中午开发&#10;写了一个有Bug的语句生成器">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/ZSGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SwingProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/McModModifier_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_3_2_12_48__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_3_2_12_48__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$DrawLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$DrawLine.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ZSEditorPopMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ZSEditorPopMenu$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ZSEditorPopMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ZSEditorPopMenu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tweak/ZSHelper$Operation.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tweak/ZSHelper$Operation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/ZSGenerator$ZSLineCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/ZSGenerator$ZSLineCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/ZSGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/ZSGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/tweak/ZSHelper$OperationType.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tweak/ZSHelper$OperationType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tweak/ZSHelper$ZSOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tweak/ZSHelper$ZSOperation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tweak/ZSHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tweak/ZSHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/McModModifier-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/McModModifier-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/editors/EditorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/editors/EditorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/ZSGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/ZSGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tweak/ZSHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tweak/ZSHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +61,37 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="McModModifier" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="McModModifier" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="McModModifier" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -78,7 +118,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="http.proxy" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="McModModifier.main" />
@@ -86,8 +126,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Project [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Gradle.Project [build]" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Project [build]" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -136,6 +200,32 @@
     <MESSAGE value="3/4中午开发&#10;写了一个有Bug的语句生成器" />
     <option name="LAST_COMMIT_MESSAGE" value="3/4中午开发&#10;写了一个有Bug的语句生成器" />
   </component>
+  <component name="WindowStateProjectService">
+    <state width="1422" height="156" key="GridCell.Tab.0.bottom" timestamp="1614868196915">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1422" height="156" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1614868196915" />
+    <state width="1422" height="156" key="GridCell.Tab.0.center" timestamp="1614868196914">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1422" height="156" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1614868196914" />
+    <state width="1422" height="156" key="GridCell.Tab.0.left" timestamp="1614868196914">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1422" height="156" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1614868196914" />
+    <state width="1422" height="156" key="GridCell.Tab.0.right" timestamp="1614868196915">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1422" height="156" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1614868196915" />
+    <state x="542" y="342" key="MultipleFileMergeDialog" timestamp="1614857260387">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="542" y="342" key="MultipleFileMergeDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1614857260387" />
+    <state x="710" y="495" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614857239531">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="710" y="495" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1010@0.0.1680.1010" timestamp="1614857239531" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -145,7 +235,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/editors/EditorHandler.java</url>
-          <line>197</line>
+          <line>250</line>
           <properties class="editors.EditorHandler.ZSEditorPopMenu" method="createEmptyFrame">
             <option name="EMULATED" value="true" />
           </properties>

@@ -10,6 +10,10 @@ import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
 
@@ -46,6 +50,8 @@ public class EditorHandler {
         panel.add(label);
         frame.getContentPane().add(panel);
         ZSEditorPopMenu menu = new ZSEditorPopMenu();
+        JScrollPane pane = new JScrollPane();
+        frame.add(pane);
         frame.setContentPane(menu);
         frame.setVisible(true);
         newFile.addActionListener(e -> {
@@ -54,7 +60,34 @@ public class EditorHandler {
 
         save.addActionListener(e -> {
             for (int i = 0 ; i < ZSHelper.operations.size() ; i++) {
-                ZSGenerator.ZSLineCommand.generateCommandByItemIO(ZSHelper.operations.get(i + 1).type, ZSHelper.operations.get(i + 1).inputs, ZSHelper.operations.get(i + 1).output);
+                ZSGenerator.commands.add(ZSGenerator.ZSLineCommand.generateCommandByItemIO(ZSHelper.operations.get(i + 1).type, ZSHelper.operations.get(i + 1).inputs, ZSHelper.operations.get(i + 1).output));
+            }
+            File fileSave = new File("./generatedRecipe.zs");
+            if (!fileSave.isFile()) {
+                try {
+                    fileSave.createNewFile();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+            BufferedWriter writer = null;
+            try {
+                writer = new BufferedWriter(new FileWriter("./generatedRecipe.zs"));
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+            for (String s : ZSGenerator.commands) {
+                try {
+                    assert writer != null;
+                    writer.write(s + "\r\n");
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+            try {
+                writer.close();
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
             }
         });
     }
@@ -168,6 +201,26 @@ public class EditorHandler {
         public static void createNewRemoveCraftingFrame() {
             JFrame frame = createEmptyFrame(ZSHelper.OperationType.REMOVE_VANILLA_CRAFTING.name);
             JPanel panel = new JPanel();
+            panel.setLayout(null);
+            JLabel label = new JLabel("Target Item: ");
+            label.setBounds(20, 40, 120, 20);
+            panel.add(label);
+            JTextField field = new JTextField();
+            field.setBounds(100, 40, 100, 20);
+            panel.add(field);
+            JButton button = new JButton("Create");
+            button.setBounds(40, 80, 120, 40);
+            panel.add(button);
+            button.addActionListener(e -> {
+                operationCount++;
+                String target = field.getText();
+                ZSHelper.operations.put(operationCount, new ZSHelper.ZSOperation(ZSHelper.OperationType.REMOVE_VANILLA_CRAFTING, null, target, 0, 0));
+                try {
+                    ZSHelper.refresh(getMainFrame());
+                } catch (InterruptedException interruptedException) {
+                    interruptedException.printStackTrace();
+                }
+            });
             frame.add(panel);
         }
 
@@ -207,28 +260,46 @@ public class EditorHandler {
 
     public static void refreshDisplay(Map<Integer, ZSHelper.ZSOperation> map, JFrame panel) {
         for (int i = 0 ; i < map.size() ; i++) {
-            panel.setLayout(null);
-            String[] inputs = map.get(i + 1).inputs;
-            JLabel label = new JLabel("AddShaplessRecipe");
-            panel.add(label);
-            label.setBounds(25, 20 + 120 * i, 160, 20);
-            JLabel label1 = new JLabel("Index: " + i);
-            panel.add(label1);
-            label1.setBounds(25, 40 + 120 * i, 100, 20);
-            JLabel label3 = new JLabel("Inputs: ");
-            panel.add(label3);
-            label3.setBounds(25, 60 + 120 * i, 100, 20);
-            for (int j = 0 ; j < inputs.length ; j++) {
-                JLabel label2 = new JLabel(inputs[j]);
-                panel.add(label2);
-                label2.setBounds(80 + (100 * j), 60 + i * 100, 120, 20);
+            if (map.get(i + 1).type.equals(ZSHelper.OperationType.ADD_VANILLA_SHAPELESS_CRAFTING)) {
+                panel.setLayout(null);
+                String[] inputs = map.get(i + 1).inputs;
+                JLabel label = new JLabel("AddShaplessRecipe");
+                panel.add(label);
+                label.setBounds(25, 20 + 120 * i, 160, 20);
+                JLabel label1 = new JLabel("Index: " + i);
+                panel.add(label1);
+                label1.setBounds(25, 40 + 120 * i, 100, 20);
+                JLabel label3 = new JLabel("Inputs: ");
+                panel.add(label3);
+                label3.setBounds(25, 60 + 120 * i, 100, 20);
+                for (int j = 0; j < inputs.length; j++) {
+                    JLabel label2 = new JLabel(inputs[j]);
+                    panel.add(label2);
+                    label2.setBounds(80 + (120 * j), 60 + i * 100, 120, 20);
+                }
+                JLabel label4 = new JLabel("Output: ");
+                panel.add(label4);
+                label4.setBounds(25, 80 + 120 * i, 100, 20);
+                JLabel label5 = new JLabel(map.get(i + 1).output);
+                panel.add(label5);
+                label5.setBounds(75, 80 + 120 * i, 100, 20);
             }
-            JLabel label4 = new JLabel("Output: ");
-            panel.add(label4);
-            label4.setBounds(25, 80 + 100 * i, 100, 20);
-            JLabel label5 = new JLabel(map.get(i + 1).output);
-            panel.add(label5);
-            label5.setBounds(75, 80 + 100 * i, 100, 20);
+            if (map.get(i + 1).type.equals(ZSHelper.OperationType.REMOVE_VANILLA_CRAFTING)) {
+                panel.setLayout(null);
+                String[] inputs = map.get(i + 1).inputs;
+                JLabel label = new JLabel("RemoveEveryRecipe");
+                panel.add(label);
+                label.setBounds(25, 20 + 120 * i, 160, 20);
+                JLabel label1 = new JLabel("Index: " + i);
+                panel.add(label1);
+                label1.setBounds(25, 40 + 120 * i, 100, 20);
+                JLabel label3 = new JLabel("Target: ");
+                panel.add(label3);
+                label3.setBounds(25, 60 + 120 * i, 100, 20);
+                JLabel label5 = new JLabel(map.get(i + 1).output);
+                panel.add(label5);
+                label5.setBounds(75, 60 + 120 * i, 100, 20);
+            }
         }
         System.out.println(panel);
     }
