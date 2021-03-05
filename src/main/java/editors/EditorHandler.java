@@ -92,6 +92,76 @@ public class EditorHandler {
         });
     }
 
+    public static void initARXML(JFrame frame) {
+        main = frame;
+        frame.setLayout(null);
+        frame.setResizable(false);
+        JPanel panel = new JPanel();
+        panel.setSize(1024, 768);
+        frame.getLayeredPane().add(new DrawLine());
+        JMenuBar bar = new JMenuBar();
+        JMenu file = new JMenu("File");
+        JMenu edit = new JMenu("Edit");
+        JMenu about = new JMenu("About");
+        bar.add(file);
+        bar.add(edit);
+        bar.add(about);
+        JMenuItem newFile = new JMenuItem("New File");
+        JMenuItem save = new JMenuItem("Save / Save As");
+        JMenuItem exit = new JMenuItem("Exit");
+        file.add(newFile);
+        file.add(save);
+        file.addSeparator();
+        file.add(exit);
+        frame.setJMenuBar(bar);
+        JLabel label = new JLabel("New object");
+        label.setBounds(40, 200, 120, 20);
+        panel.add(label);
+        frame.getContentPane().add(panel);
+        // ZSEditorPopMenu menu = new ZSEditorPopMenu();
+        JScrollPane pane = new JScrollPane();
+        frame.add(pane);
+        frame.setContentPane(menu);
+        frame.setVisible(true);
+        newFile.addActionListener(e -> {
+
+        });
+
+        save.addActionListener(e -> {
+            for (int i = 0 ; i < ZSHelper.operations.size() ; i++) {
+                ZSGenerator.commands.add(ZSGenerator.ZSLineCommand.generateCommandByItemIO(ZSHelper.operations.get(i + 1).type, ZSHelper.operations.get(i + 1).inputs, ZSHelper.operations.get(i + 1).output));
+            }
+            File fileSave = new File("./generatedRecipe.zs");
+            if (!fileSave.isFile()) {
+                try {
+                    fileSave.createNewFile();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+            BufferedWriter writer = null;
+            try {
+                writer = new BufferedWriter(new FileWriter("./generatedRecipe.zs"));
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+            for (String s : ZSGenerator.commands) {
+                try {
+                    assert writer != null;
+                    writer.write(s + "\r\n");
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+            try {
+                assert writer != null;
+                writer.close();
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
+    }
+
     public static JFrame getMainFrame() {
         return main;
     }
