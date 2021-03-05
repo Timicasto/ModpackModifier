@@ -29,14 +29,43 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d930df7c-f184-4426-812f-995af7f8152b" name="Default Changelist" comment="实现文件保存功能，实现配方移除">
+    <list default="true" id="d930df7c-f184-4426-812f-995af7f8152b" name="Default Changelist" comment="修复了缺少根包的重大失误">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_3_5_19_53_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_3_5_19_53__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ARXMLEditorPopMenu$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ARXMLEditorPopMenu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/tweak/ARHelper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/tweak/arobj/Astronomical$Planet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/tweak/arobj/Astronomical$Star.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/tweak/arobj/Astronomical.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generatedRecipe.zs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/timicasto/tweak/ARHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/editors/EditorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/editors/EditorHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tweak/ARHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tweak/ARHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tweak/arobj/Astronomical.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tweak/arobj/Astronomical.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$DrawLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$DrawLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ZSEditorPopMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ZSEditorPopMenu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ZSEditorPopMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ZSEditorPopMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/editors/EditorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/editors/EditorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/CustomJFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/gui/CustomJFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/PopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/gui/PopMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/ZSGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/io/ZSGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tweak/ARHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tweak/ZSHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/tweak/ZSHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tweak/arobj/Astronomical.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/tweak/arobj/Astronomical.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +131,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="http.proxy" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -128,9 +157,7 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
     <list>
@@ -194,29 +221,50 @@
     <MESSAGE value="3/3中午开发&#10;完成Map读写和写了一半的显示更新" />
     <MESSAGE value="3/4中午开发&#10;写了一个有Bug的语句生成器" />
     <MESSAGE value="实现文件保存功能，实现配方移除" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现文件保存功能，实现配方移除" />
+    <MESSAGE value="修复了缺少根包的重大失误" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复了缺少根包的重大失误" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="711" height="155" key="GridCell.Tab.0.bottom" timestamp="1614871293097">
+    <state width="1422" height="157" key="GridCell.Tab.0.bottom" timestamp="1614956913845">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="711" height="155" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1614871293097" />
-    <state width="711" height="155" key="GridCell.Tab.0.center" timestamp="1614871293097">
+    <state width="1422" height="157" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1614956913845" />
+    <state width="1422" height="157" key="GridCell.Tab.0.center" timestamp="1614956913845">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="711" height="155" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1614871293097" />
-    <state width="711" height="155" key="GridCell.Tab.0.left" timestamp="1614871293097">
+    <state width="1422" height="157" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1614956913845" />
+    <state width="1422" height="157" key="GridCell.Tab.0.left" timestamp="1614956913845">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="711" height="155" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1614871293097" />
-    <state width="711" height="155" key="GridCell.Tab.0.right" timestamp="1614871293097">
+    <state width="1422" height="157" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1614956913845" />
+    <state width="1422" height="157" key="GridCell.Tab.0.right" timestamp="1614956913845">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="711" height="155" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1614871293097" />
+    <state width="1422" height="157" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1614956913845" />
+    <state width="1422" height="239" key="GridCell.Tab.1.bottom" timestamp="1614953869468">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1422" height="239" key="GridCell.Tab.1.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1614953869468" />
+    <state width="1422" height="239" key="GridCell.Tab.1.center" timestamp="1614953869468">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1422" height="239" key="GridCell.Tab.1.center/0.0.1680.1010@0.0.1680.1010" timestamp="1614953869468" />
+    <state width="1422" height="239" key="GridCell.Tab.1.left" timestamp="1614953869468">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1422" height="239" key="GridCell.Tab.1.left/0.0.1680.1010@0.0.1680.1010" timestamp="1614953869468" />
+    <state width="1422" height="239" key="GridCell.Tab.1.right" timestamp="1614953869468">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1422" height="239" key="GridCell.Tab.1.right/0.0.1680.1010@0.0.1680.1010" timestamp="1614953869468" />
     <state x="542" y="342" key="MultipleFileMergeDialog" timestamp="1614857260387">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="542" y="342" key="MultipleFileMergeDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1614857260387" />
+    <state x="562" y="199" key="SettingsEditor" timestamp="1614954015130">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="562" y="199" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1614954015130" />
     <state x="382" y="161" key="Vcs.Push.Dialog.v2" timestamp="1614868700461">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -225,22 +273,18 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="710" y="495" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1010@0.0.1680.1010" timestamp="1614857239531" />
+    <state x="473" y="287" width="1126" height="641" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1614951931798">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="473" y="287" width="1126" height="641" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1680.1010@0.0.1680.1010" timestamp="1614951931798" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
+        <breakpoint type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/editors/EditorHandler.java</url>
-          <line>320</line>
-          <properties class="editors.EditorHandler.ZSEditorPopMenu" method="createEmptyFrame">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

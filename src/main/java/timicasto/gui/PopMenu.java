@@ -1,4 +1,4 @@
-package gui;
+package timicasto.gui;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

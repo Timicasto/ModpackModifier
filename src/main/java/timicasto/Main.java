@@ -1,11 +1,12 @@
-import editors.EditorHandler;
+package timicasto;
+
 import gui.CustomJFrame;
 import gui.PopMenu;
+import timicasto.editors.EditorHandler;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -13,12 +14,18 @@ import java.util.Objects;
 
 public class Main {
 
+    /**
+     * This project meets the following laws:
+     *   - Comments that belongs to the line below it
+     */
+
     public static int instanceCount;
     public static boolean showWarningMessage = true;
     public static boolean terminateWhenWindowClose = false;
 
-
     public static void main(String[] args) {
+        // When the available memory in Java Virtual Machine is less than 512MB, let the user stop running the entire
+        // program as long as any one of the windows is closed.
         if (getFreeMemory() / 1024 / 1024 < 512) {
             JOptionPane.showMessageDialog(null, "The current JVM memory margin is too low, no matter you close any window, the entire program will stop running, please pay attention to save your work");
             terminateWhenWindowClose = true;
@@ -32,18 +39,30 @@ public class Main {
         });
     }
 
+    /**
+     * Used to get available memory in Java Virtual Machine
+     *
+     * @return Available memory in Java Virtual Machine
+     */
     public static double getFreeMemory() {
         Runtime time = Runtime.getRuntime();
         System.out.println("Free Memory: " + time.freeMemory() + " bytes");
         return time.freeMemory();
     }
 
-
+    /**
+     * Program main window initialization method
+     *
+     * @throws IOException
+     */
     public static void createWindow() throws IOException {
         JPanel panel = new JPanel();
         JFrame frame = new JFrame();
         frame.setTitle("Modpack Modifier SNAPSHOT 1.0 -by QuantumHardwareStudio");
+        // TODO: Change the icon from the network to load from local loading
         frame.setIconImage(PopMenu.icon);
+        // If the available memory is less than 512M, it will output "Set to true" on the console, and execute the
+        // setting logic to stop running the program when any window is closed.
         if (terminateWhenWindowClose) {
             System.out.println("Set to true");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -80,7 +99,7 @@ public class Main {
         JButton propertyARXML = new JButton("XML(Advanced Rocketry)");
         propertyARXML.setBounds(10, 160, 200, 25);
         propertyARXML.addActionListener(e -> {
-            createNewWindowByButton("XML(Advanced Rocketry) Editor", 1024, 768);
+            EditorHandler.initARXML(Objects.requireNonNull(createNewWindowByButton("XML(Advanced Rocketry) Editor", 1024, 768)));
         });
         panel.add(propertyARXML);
         JButton propertyCM3 = new JButton("Json(Compact Machines 3)");

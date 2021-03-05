@@ -1,3 +1,5 @@
+package timicasto;
+
 import com.jhlabs.image.GaussianFilter;
 
 import java.awt.*;

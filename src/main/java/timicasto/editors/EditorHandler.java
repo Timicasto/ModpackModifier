@@ -1,8 +1,10 @@
-package editors;
+package timicasto.editors;
 
-import gui.PopMenu;
-import io.ZSGenerator;
-import tweak.ZSHelper;
+import timicasto.gui.PopMenu;
+import timicasto.io.ZSGenerator;
+import timicasto.tweak.ARHelper;
+import timicasto.tweak.ZSHelper;
+import timicasto.tweak.arobj.Astronomical;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -20,6 +22,7 @@ import java.util.Map;
 public class EditorHandler {
 
     public static int operationCount = 0;
+    public static int arObjs = 0;
     private static JFrame main;
 
     public static void initCrT(JFrame frame) {
@@ -118,7 +121,7 @@ public class EditorHandler {
         label.setBounds(40, 200, 120, 20);
         panel.add(label);
         frame.getContentPane().add(panel);
-        // ZSEditorPopMenu menu = new ZSEditorPopMenu();
+        ARXMLEditorPopMenu menu = new ARXMLEditorPopMenu();
         JScrollPane pane = new JScrollPane();
         frame.add(pane);
         frame.setContentPane(menu);
@@ -175,6 +178,105 @@ public class EditorHandler {
         }
     }
 
+    static class ARXMLEditorPopMenu extends JPanel{
+        JMenuItem ADD_STAR, ADD_PLANET;
+
+        public ARXMLEditorPopMenu() {
+            JPopupMenu menu = new JPopupMenu();
+            menu.add(ADD_STAR = new JMenuItem("Create a Star"));
+            menu.add(ADD_PLANET = new JMenuItem("Create a Planet"));
+            addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    System.out.println("Pressed mouse button " + e.getButton());
+                    if (e.getButton() == MouseEvent.BUTTON3) {
+                        menu.show(EditorHandler.ARXMLEditorPopMenu.this, e.getX(), e.getY());
+                    }
+                }
+            });
+            initARXMLEvent();
+        }
+
+        private void initARXMLEvent() {
+            ADD_STAR.addActionListener(e -> createNewStarFrame());
+            ADD_PLANET.addActionListener(e -> createNewPlanetFrame());
+        }
+
+        public static void createNewStarFrame() {
+            JFrame frame = createNormalFrame("Create a new Star");
+            JPanel panel = new JPanel();
+            panel.setLayout(null);
+            JLabel name = new JLabel("ID: ");
+            name.setBounds(20, 20, 80, 20);
+            panel.add(name);
+            JTextField nameField = new JTextField();
+            nameField.setBounds(240, 20, 250, 20);
+            panel.add(nameField);
+
+            JLabel name1 = new JLabel("Name: ");
+            name1.setBounds(20, 60, 80, 20);
+            panel.add(name1);
+            JTextField nameField1 = new JTextField();
+            nameField1.setBounds(240, 60, 250, 20);
+            panel.add(nameField1);
+            JLabel name2 = new JLabel("Temp: ");
+            name2.setBounds(20, 100, 80, 20);
+            panel.add(name2);
+            JTextField nameField2 = new JTextField();
+            nameField2.setBounds(240, 100, 250, 20);
+            panel.add(nameField2);
+            JLabel name3 = new JLabel("X Pos: ");
+            name3.setBounds(20, 140, 120, 20);
+            panel.add(name3);
+            JTextField nameField3 = new JTextField();
+            nameField3.setBounds(240, 140, 250, 20);
+            panel.add(nameField3);
+            JLabel name4 = new JLabel("Y Pos: ");
+            name4.setBounds(20, 180, 80, 20);
+            panel.add(name4);
+            JTextField nameField4 = new JTextField();
+            nameField4.setBounds(240, 180, 250, 20);
+            panel.add(nameField4);
+            JLabel name5 = new JLabel("Random solid planet count: ");
+            name5.setBounds(20, 220, 200, 20);
+            panel.add(name5);
+            JTextField nameField5 = new JTextField();
+            nameField5.setBounds(240, 220, 250, 20);
+            panel.add(nameField5);
+            JLabel name6 = new JLabel("Name: ");
+            name6.setBounds(20, 260, 80, 20);
+            panel.add(name6);
+            JTextField nameField6 = new JTextField();
+            nameField6.setBounds(240, 260, 250, 20);
+            panel.add(nameField6);
+            JButton button = new JButton("Finish");
+            button.setBounds(160, 300, 160, 60);
+            panel.add(button);
+            frame.add(panel);
+            button.addActionListener(e -> {
+                arObjs++;
+                ARHelper.stars.put(arObjs, new Astronomical.Star(nameField1.getText(), Integer.parseInt(nameField2.getText()), Integer.parseInt(nameField3.getText()), Integer.parseInt(nameField4.getText()), Integer.parseInt(nameField5.getText()), Integer.parseInt(nameField.getText())));
+            });
+            frame.repaint();
+            System.out.println(frame);
+        }
+
+        public static void createNewPlanetFrame() {
+            JFrame frame = createNormalFrame("Create a new Planet");
+            JPanel panel = new JPanel();
+            frame.add(panel);
+        }
+    }
+
+    public static JFrame createNormalFrame(String title) {
+        JFrame frame = new JFrame(title);
+        frame.setSize(800, 600);
+        frame.setResizable(false);
+        frame.setVisible(true);
+        frame.setIconImage(PopMenu.icon);
+        return frame;
+    }
+
     static class ZSEditorPopMenu extends JPanel {
         JMenuItem ADD_VANILLA_SHAPELESS_CRAFTING, REMOVE_VANILLA_CRAFTING, MOD_AA_ATOMIC_RECONSTRUCTOR_ADD, MOD_AA_ATOMIC_RECONSTRUCTOR_REMOVE, MOD_AA_BALL_OF_FUR_ADD, MOD_AA_BALL_OF_FUR_REMOVE;
 
@@ -201,10 +303,10 @@ public class EditorHandler {
                     }
                 }
             });
-            initEvent();
+            initCrTEvent();
         }
 
-        private void initEvent() {
+        private void initCrTEvent() {
             ADD_VANILLA_SHAPELESS_CRAFTING.addActionListener(e -> createNewShaplessCraftingFrame());
             REMOVE_VANILLA_CRAFTING.addActionListener(e -> createNewRemoveCraftingFrame());
             MOD_AA_ATOMIC_RECONSTRUCTOR_ADD.addActionListener(e -> createNewReconstructorAddFrame());
@@ -320,7 +422,7 @@ public class EditorHandler {
 
         public static JFrame createEmptyFrame(String title) {
             JFrame frame = new JFrame(title);
-            frame.setSize(400, 400);
+            frame.setSize(400, 800);
             frame.setResizable(false);
             frame.setVisible(true);
             frame.setIconImage(PopMenu.icon);
