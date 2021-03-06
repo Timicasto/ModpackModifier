@@ -30,17 +30,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d930df7c-f184-4426-812f-995af7f8152b" name="Default Changelist" comment="修复了缺少根包的重大失误">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_3_5_19_53_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_3_5_19_53__Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ARXMLEditorPopMenu$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ARXMLEditorPopMenu.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/tweak/ARHelper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/tweak/arobj/Astronomical$Planet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/tweak/arobj/Astronomical$Star.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/tweak/arobj/Astronomical.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generatedRecipe.zs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/timicasto/tweak/ARHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/io/XMLGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileContent/fileContent.lock" afterDir="false" />
@@ -51,21 +41,37 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$DrawLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$DrawLine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ZSEditorPopMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ZSEditorPopMenu$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ZSEditorPopMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ZSEditorPopMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/editors/EditorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/editors/EditorHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/CustomJFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/gui/CustomJFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/PopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/gui/PopMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/ZSGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/io/ZSGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tweak/ARHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tweak/ZSHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/tweak/ZSHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tweak/arobj/Astronomical.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/tweak/arobj/Astronomical.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Utils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ARXMLEditorPopMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ARXMLEditorPopMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$DrawLine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ZSEditorPopMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler$ZSEditorPopMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/editors/EditorHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/CustomJFrame$BackgroundPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/CustomJFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/PopMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/ZSGenerator$ZSLineCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/ZSGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tweak/ARHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tweak/ZSHelper$Operation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tweak/ZSHelper$OperationType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tweak/ZSHelper$ZSOperation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tweak/ZSHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tweak/arobj/Astronomical$Planet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tweak/arobj/Astronomical$Star.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tweak/arobj/Astronomical.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/Utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/editors/EditorHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/gui/CustomJFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/gui/PopMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/io/ZSGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/tweak/ARHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/tweak/ZSHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/tweak/arobj/Astronomical.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +139,33 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main (2)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="timicasto.Main" />
+      <module name="McModModifier.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="timicasto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="timicasto.modpackmodifier.Main" />
+      <module name="McModModifier.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="timicasto.modpackmodifier.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="McModModifier.main" />
@@ -163,9 +195,13 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Gradle.Project [build]" />
+      <item itemvalue="Application.Main (1)" />
+      <item itemvalue="Application.Main (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (2)" />
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Gradle.Project [build]" />
         <item itemvalue="Application.Main" />
       </list>
@@ -225,38 +261,42 @@
     <option name="LAST_COMMIT_MESSAGE" value="修复了缺少根包的重大失误" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1422" height="157" key="GridCell.Tab.0.bottom" timestamp="1614956913845">
+    <state x="786" y="365" key="#xdebugger.evaluate" timestamp="1615005779569">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1422" height="157" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1614956913845" />
-    <state width="1422" height="157" key="GridCell.Tab.0.center" timestamp="1614956913845">
+    <state x="786" y="365" key="#xdebugger.evaluate/0.0.1680.1010@0.0.1680.1010" timestamp="1615005779569" />
+    <state width="1422" height="157" key="GridCell.Tab.0.bottom" timestamp="1615049021429">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1422" height="157" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1614956913845" />
-    <state width="1422" height="157" key="GridCell.Tab.0.left" timestamp="1614956913845">
+    <state width="1422" height="157" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1615049021429" />
+    <state width="1422" height="157" key="GridCell.Tab.0.center" timestamp="1615049021428">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1422" height="157" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1614956913845" />
-    <state width="1422" height="157" key="GridCell.Tab.0.right" timestamp="1614956913845">
+    <state width="1422" height="157" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1615049021428" />
+    <state width="1422" height="157" key="GridCell.Tab.0.left" timestamp="1615049021428">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1422" height="157" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1614956913845" />
-    <state width="1422" height="239" key="GridCell.Tab.1.bottom" timestamp="1614953869468">
+    <state width="1422" height="157" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1615049021428" />
+    <state width="1422" height="157" key="GridCell.Tab.0.right" timestamp="1615049021428">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1422" height="239" key="GridCell.Tab.1.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1614953869468" />
-    <state width="1422" height="239" key="GridCell.Tab.1.center" timestamp="1614953869468">
+    <state width="1422" height="157" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1615049021428" />
+    <state width="1422" height="239" key="GridCell.Tab.1.bottom" timestamp="1615047074973">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1422" height="239" key="GridCell.Tab.1.center/0.0.1680.1010@0.0.1680.1010" timestamp="1614953869468" />
-    <state width="1422" height="239" key="GridCell.Tab.1.left" timestamp="1614953869468">
+    <state width="1422" height="239" key="GridCell.Tab.1.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1615047074973" />
+    <state width="1422" height="239" key="GridCell.Tab.1.center" timestamp="1615047074973">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1422" height="239" key="GridCell.Tab.1.left/0.0.1680.1010@0.0.1680.1010" timestamp="1614953869468" />
-    <state width="1422" height="239" key="GridCell.Tab.1.right" timestamp="1614953869468">
+    <state width="1422" height="239" key="GridCell.Tab.1.center/0.0.1680.1010@0.0.1680.1010" timestamp="1615047074973" />
+    <state width="1422" height="239" key="GridCell.Tab.1.left" timestamp="1615047074973">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1422" height="239" key="GridCell.Tab.1.right/0.0.1680.1010@0.0.1680.1010" timestamp="1614953869468" />
+    <state width="1422" height="239" key="GridCell.Tab.1.left/0.0.1680.1010@0.0.1680.1010" timestamp="1615047074973" />
+    <state width="1422" height="239" key="GridCell.Tab.1.right" timestamp="1615047074973">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1422" height="239" key="GridCell.Tab.1.right/0.0.1680.1010@0.0.1680.1010" timestamp="1615047074973" />
     <state x="542" y="342" key="MultipleFileMergeDialog" timestamp="1614857260387">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -265,6 +305,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="562" y="199" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1614954015130" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1615047047993">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1680.1010@0.0.1680.1010" timestamp="1615047047993" />
     <state x="382" y="161" key="Vcs.Push.Dialog.v2" timestamp="1614868700461">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -273,18 +317,30 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="710" y="495" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1010@0.0.1680.1010" timestamp="1614857239531" />
-    <state x="473" y="287" width="1126" height="641" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1614951931798">
+    <state x="473" y="287" width="1126" height="641" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1615006021378">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="473" y="287" width="1126" height="641" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1680.1010@0.0.1680.1010" timestamp="1614951931798" />
+    <state x="473" y="287" width="1126" height="641" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1680.1010@0.0.1680.1010" timestamp="1615006021378" />
+    <state x="624" y="261" width="670" height="676" key="search.everywhere.popup" timestamp="1615047041471">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="624" y="261" width="670" height="676" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1615047041471" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint type="java-exception">
+        <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="6" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/editors/EditorHandler.java</url>
+          <line>490</line>
+          <properties class="timicasto.modpackmodifier.editors.EditorHandler" method="refreshARDisplay">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

@@ -1,4 +1,4 @@
-package timicasto.gui;
+package timicasto.modpackmodifier.gui;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

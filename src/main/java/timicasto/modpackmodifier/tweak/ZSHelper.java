@@ -1,6 +1,6 @@
-package timicasto.tweak;
+package timicasto.modpackmodifier.tweak;
 
-import timicasto.editors.EditorHandler;
+import timicasto.modpackmodifier.editors.EditorHandler;
 
 import javax.swing.*;
 import java.util.HashMap;

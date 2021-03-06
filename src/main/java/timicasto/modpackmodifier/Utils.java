@@ -1,4 +1,4 @@
-package timicasto;
+package timicasto.modpackmodifier;
 
 import com.jhlabs.image.GaussianFilter;
 

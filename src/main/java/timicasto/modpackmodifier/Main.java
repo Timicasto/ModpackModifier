@@ -1,8 +1,10 @@
-package timicasto;
+package timicasto.modpackmodifier;
 
-import gui.CustomJFrame;
-import gui.PopMenu;
-import timicasto.editors.EditorHandler;
+import timicasto.modpackmodifier.gui.CustomJFrame;
+import timicasto.modpackmodifier.gui.PopMenu;
+import timicasto.modpackmodifier.editors.EditorHandler;
+import timicasto.modpackmodifier.tweak.ARHelper;
+import timicasto.modpackmodifier.tweak.arobj.Astronomical;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -37,6 +39,8 @@ public class Main {
                 e.printStackTrace();
             }
         });
+        ARHelper.stars.put(0, new Astronomical.Star("", 0, 0, 0, 0, 0));
+        ARHelper.planets.put(0, new Astronomical.Planet("", false, false, "", "", "", 0, 0, 0, 0, 0, 0, 0, 0, new Color(0, 0, 0), new Color(0, 0, 0), new String[]{}));
     }
 
     /**

@@ -1,4 +1,4 @@
-package timicasto.tweak.arobj;
+package timicasto.modpackmodifier.tweak.arobj;
 
 import java.awt.*;
 

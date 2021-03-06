@@ -1,10 +1,10 @@
-package timicasto.editors;
+package timicasto.modpackmodifier.editors;
 
-import timicasto.gui.PopMenu;
-import timicasto.io.ZSGenerator;
-import timicasto.tweak.ARHelper;
-import timicasto.tweak.ZSHelper;
-import timicasto.tweak.arobj.Astronomical;
+import timicasto.modpackmodifier.gui.PopMenu;
+import timicasto.modpackmodifier.io.ZSGenerator;
+import timicasto.modpackmodifier.tweak.ARHelper;
+import timicasto.modpackmodifier.tweak.ZSHelper;
+import timicasto.modpackmodifier.tweak.arobj.Astronomical;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -17,16 +17,17 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Map;
 
 public class EditorHandler {
 
     public static int operationCount = 0;
     public static int arObjs = 0;
-    private static JFrame main;
+    private static JFrame mainCrT, mainXML;
 
     public static void initCrT(JFrame frame) {
-        main = frame;
+        mainCrT = frame;
         frame.setLayout(null);
         frame.setResizable(false);
         JPanel panel = new JPanel();
@@ -96,7 +97,7 @@ public class EditorHandler {
     }
 
     public static void initARXML(JFrame frame) {
-        main = frame;
+        mainXML = frame;
         frame.setLayout(null);
         frame.setResizable(false);
         JPanel panel = new JPanel();
@@ -165,8 +166,12 @@ public class EditorHandler {
         });
     }
 
-    public static JFrame getMainFrame() {
-        return main;
+    public static JFrame getCrTMainFrame() {
+        return mainCrT;
+    }
+
+    public static JFrame getXMLMainFrame() {
+        return mainXML;
     }
 
     static class DrawLine extends JPanel {
@@ -256,6 +261,11 @@ public class EditorHandler {
             button.addActionListener(e -> {
                 arObjs++;
                 ARHelper.stars.put(arObjs, new Astronomical.Star(nameField1.getText(), Integer.parseInt(nameField2.getText()), Integer.parseInt(nameField3.getText()), Integer.parseInt(nameField4.getText()), Integer.parseInt(nameField5.getText()), Integer.parseInt(nameField.getText())));
+                try {
+                    ARHelper.refresh(getXMLMainFrame());
+                } catch (InterruptedException interruptedException) {
+                    interruptedException.printStackTrace();
+                }
             });
             frame.repaint();
             System.out.println(frame);
@@ -266,6 +276,8 @@ public class EditorHandler {
             JPanel panel = new JPanel();
             frame.add(panel);
         }
+
+
     }
 
     public static JFrame createNormalFrame(String title) {
@@ -276,6 +288,7 @@ public class EditorHandler {
         frame.setIconImage(PopMenu.icon);
         return frame;
     }
+
 
     static class ZSEditorPopMenu extends JPanel {
         JMenuItem ADD_VANILLA_SHAPELESS_CRAFTING, REMOVE_VANILLA_CRAFTING, MOD_AA_ATOMIC_RECONSTRUCTOR_ADD, MOD_AA_ATOMIC_RECONSTRUCTOR_REMOVE, MOD_AA_BALL_OF_FUR_ADD, MOD_AA_BALL_OF_FUR_REMOVE;
@@ -359,7 +372,7 @@ public class EditorHandler {
                     System.out.println(Arrays.toString(inputs));
                     ZSHelper.operations.put(operationCount, new ZSHelper.ZSOperation(ZSHelper.OperationType.ADD_VANILLA_SHAPELESS_CRAFTING, inputs, field1.getText(), 0, 0));
                     try {
-                        ZSHelper.refresh(getMainFrame());
+                        ZSHelper.refresh(getCrTMainFrame());
                     } catch (InterruptedException interruptedException) {
                         interruptedException.printStackTrace();
                     }
@@ -388,7 +401,7 @@ public class EditorHandler {
                 String target = field.getText();
                 ZSHelper.operations.put(operationCount, new ZSHelper.ZSOperation(ZSHelper.OperationType.REMOVE_VANILLA_CRAFTING, null, target, 0, 0));
                 try {
-                    ZSHelper.refresh(getMainFrame());
+                    ZSHelper.refresh(getCrTMainFrame());
                 } catch (InterruptedException interruptedException) {
                     interruptedException.printStackTrace();
                 }
@@ -458,7 +471,6 @@ public class EditorHandler {
             }
             if (map.get(i + 1).type.equals(ZSHelper.OperationType.REMOVE_VANILLA_CRAFTING)) {
                 panel.setLayout(null);
-                String[] inputs = map.get(i + 1).inputs;
                 JLabel label = new JLabel("RemoveEveryRecipe");
                 panel.add(label);
                 label.setBounds(25, 20 + 120 * i, 160, 20);
@@ -474,5 +486,46 @@ public class EditorHandler {
             }
         }
         System.out.println(panel);
+    }
+
+    public static void refreshARDisplay(Map<Integer, ?> map, JFrame frame) {
+        int objects = 0;
+        if (map.get(0).getClass().equals(Astronomical.Star.class)) {
+            for (int i = 0 ; i < map.size() -1  ; i++) {
+                objects++;
+                Astronomical.Star star = (Astronomical.Star) map.get(i + 1);
+                JLabel label = new JLabel("Star:   " + star.name);
+                frame.add(label);
+                label.setBounds(20, 20 + 160 * (objects - 1), 120, 20);
+                JLabel label1 = new JLabel("Temp:   " + star.temp);
+                frame.add(label1);
+                label1.setBounds(20, 40 + 160 * (objects - 1), 120, 20);
+                JLabel label2 = new JLabel("X Position: " + star.x);
+                frame.add(label2);
+                label2.setBounds(20, 60 + 160 * (objects - 1), 120, 20);
+                JLabel label3 = new JLabel("Y Position: " + star.y);
+                frame.add(label3);
+                label3.setBounds(20, 80 + 160 * (objects - 1), 120, 20);
+                JLabel label4 = new JLabel("ID: " + star.id);
+                frame.add(label4);
+                label4.setBounds(20, 100 + 160 * (objects - 1), 120, 20);
+                JLabel label5 = new JLabel("Default number of planets: " + star.numPlanets);
+                frame.add(label5);
+                label5.setBounds(20, 120 + 160 * (objects - 1), 400, 20);
+                JLabel label6 = new JLabel("// The number of random solid planets generated under this star");
+                frame.add(label6);
+                label6.setBounds(20, 140 + 160 * (objects - 1), 800, 20);
+                System.out.println(frame);
+            }
+        }
+        if (map.get(0).getClass().equals(Astronomical.Planet.class)) {
+            for (int i = 0 ; i < map.size() - 1 ; i++) {
+                objects++;
+                Astronomical.Planet planet = (Astronomical.Planet) map.get(i + 1);
+                JLabel label = new JLabel("Planet: " + planet.name);
+                frame.add(label);
+                label.setBounds(20, 160 * objects, 120, 20);
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
-package timicasto.io;
+package timicasto.modpackmodifier.io;
 
-import timicasto.tweak.ZSHelper;
+import timicasto.modpackmodifier.tweak.ZSHelper;
 
 import java.util.ArrayList;
 import java.util.List;
