@@ -27,6 +27,8 @@ public class BorderRadius implements Border {
     @Override
     public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
         g.setColor(color);
-        g.drawRoundRect(0, 0, c.getWidth() - 1, c.getHeight() - 1, 32, 32);
+        for (int i = -1; i < 15 ; i++) {
+            g.drawRoundRect(0, 0, c.getWidth() + i, c.getHeight() + i, 32, 32);
+        }
     }
 }

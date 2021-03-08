@@ -30,7 +30,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d930df7c-f184-4426-812f-995af7f8152b" name="Default Changelist" comment="制作XML的Star图形化显示">
-      <change afterPath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/gui/BorderRadius.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
@@ -38,12 +37,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_3_2_12_48__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_3_2_12_48__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_3_5_19_53__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_3_5_19_53__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/editors/EditorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/editors/EditorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/gui/BorderRadius.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/gui/BorderRadius.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,14 +159,16 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Gradle.Project [build]" />
       <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.Main (2)" />
+      <item itemvalue="Gradle.Project [build]" />
     </list>
     <recent_temporary>
       <list>
@@ -233,80 +233,6 @@
     <MESSAGE value="制作XML的Star图形化显示" />
     <option name="LAST_COMMIT_MESSAGE" value="制作XML的Star图形化显示" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="448" y="159" key="#Project_Structure" timestamp="1615049215871">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state x="448" y="159" key="#Project_Structure/0.0.1680.1010@0.0.1680.1010" timestamp="1615049215871" />
-    <state x="786" y="365" key="#xdebugger.evaluate" timestamp="1615005779569">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state x="786" y="365" key="#xdebugger.evaluate/0.0.1680.1010@0.0.1680.1010" timestamp="1615005779569" />
-    <state width="1422" height="156" key="GridCell.Tab.0.bottom" timestamp="1615125070500">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state width="1422" height="156" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1615125070500" />
-    <state width="1422" height="156" key="GridCell.Tab.0.center" timestamp="1615125070500">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state width="1422" height="156" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1615125070500" />
-    <state width="1422" height="156" key="GridCell.Tab.0.left" timestamp="1615125070500">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state width="1422" height="156" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1615125070500" />
-    <state width="1422" height="156" key="GridCell.Tab.0.right" timestamp="1615125070500">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state width="1422" height="156" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1615125070500" />
-    <state width="1422" height="238" key="GridCell.Tab.1.bottom" timestamp="1615122579717">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state width="1422" height="238" key="GridCell.Tab.1.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1615122579717" />
-    <state width="1422" height="238" key="GridCell.Tab.1.center" timestamp="1615122579717">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state width="1422" height="238" key="GridCell.Tab.1.center/0.0.1680.1010@0.0.1680.1010" timestamp="1615122579717" />
-    <state width="1422" height="238" key="GridCell.Tab.1.left" timestamp="1615122579717">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state width="1422" height="238" key="GridCell.Tab.1.left/0.0.1680.1010@0.0.1680.1010" timestamp="1615122579717" />
-    <state width="1422" height="238" key="GridCell.Tab.1.right" timestamp="1615122579717">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state width="1422" height="238" key="GridCell.Tab.1.right/0.0.1680.1010@0.0.1680.1010" timestamp="1615122579717" />
-    <state x="542" y="342" key="MultipleFileMergeDialog" timestamp="1614857260387">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state x="542" y="342" key="MultipleFileMergeDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1614857260387" />
-    <state x="562" y="199" key="SettingsEditor" timestamp="1614954015130">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state x="562" y="199" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1614954015130" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1615047047993">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1680.1010@0.0.1680.1010" timestamp="1615047047993" />
-    <state x="382" y="161" key="Vcs.Push.Dialog.v2" timestamp="1614868700461">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state x="382" y="161" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1614868700461" />
-    <state width="741" height="388" key="XDebugger.FullValuePopup" timestamp="1615122290464">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state width="741" height="388" key="XDebugger.FullValuePopup/0.0.1680.1010@0.0.1680.1010" timestamp="1615122290464" />
-    <state x="710" y="495" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614857239531">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state x="710" y="495" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1010@0.0.1680.1010" timestamp="1614857239531" />
-    <state x="473" y="287" width="1126" height="641" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1615006021378">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state x="473" y="287" width="1126" height="641" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1680.1010@0.0.1680.1010" timestamp="1615006021378" />
-    <state x="624" y="261" width="672" height="676" key="search.everywhere.popup" timestamp="1615116765569">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state x="624" y="261" width="672" height="676" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1615116765569" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -317,14 +243,14 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/editors/EditorHandler.java</url>
           <line>613</line>
-          <properties class="timicasto.modpackmodifier.editors.EditorHandler" method="refreshARDisplay">
+          <properties class="timicasto.modpackmodifier.editors.EditorHandler">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/Main.java</url>
-          <line>94</line>
+          <line>95</line>
           <properties class="timicasto.modpackmodifier.Main" method="placeComponents">
             <option name="EMULATED" value="true" />
           </properties>

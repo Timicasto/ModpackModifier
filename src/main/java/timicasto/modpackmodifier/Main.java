@@ -11,6 +11,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.geom.RoundRectangle2D;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -92,7 +93,7 @@ public class Main {
         frame.setVisible(true);
     }
 
-    public static void placeComponents(JPanel panel) throws MalformedURLException {
+    public static void placeComponents(JPanel panel) throws IOException {
         panel.setLayout(null);
         panel.setBackground(new Color(16777215));
         JLabel title = new JLabel("Modpack Modifier");
@@ -105,10 +106,22 @@ public class Main {
         welcome.setForeground(new Color(0));
         panel.add(welcome);
         welcome.setBounds(93, 102, 43, 29);
-        JButton propertyCrT = new JButton("ZenScript(Craft Tweaker)", new ImageIcon(new URL("http://timicasto.sukazyo.cc:12000/icons/zs.png")));
+        JButton propertyCrT = new JButton("    Craft Tweaker     ", new ImageIcon(new URL("http://timicasto.sukazyo.cc:12000/zs.png"))) {
+            @Override
+            protected void paintComponent(Graphics g) {
+                if (getModel().isArmed()) {
+                    g.setColor(new Color(0xEEEEEE));
+                    this.setBorder(new BorderRadius());
+                } else {
+                    g.setColor(getBackground());
+                }
+                g.fillRoundRect(0, 0, getSize().width - 1, getSize().height - 1,10,10);
+                super.paintComponent(g);
+            }
+        };
         propertyCrT.setFont(new Font("微软雅黑", Font.BOLD, 16));
         propertyCrT.setForeground(new Color(7368816));
-        propertyCrT.setBackground(new Color(15658734));
+        propertyCrT.setBackground(new Color(0xEEEEEE));
         propertyCrT.setBorder(new BorderRadius());
         propertyCrT.setBorderPainted(false);
         propertyCrT.setOpaque(false);
@@ -116,25 +129,90 @@ public class Main {
         propertyCrT.setFocusPainted(false);
         propertyCrT.setBounds(93, 318, 265, 53);
         panel.add(propertyCrT);
-        JButton propertyModularMachinery = new JButton("Json(Modular Machinery)");
-        propertyModularMachinery.setBounds(10, 120, 200, 25);
+        JButton propertyModularMachinery = new JButton("Modular Machinery", new ImageIcon(new URL("http://timicasto.sukazyo.cc:12000/json.png"))) {
+            @Override
+            protected void paintComponent(Graphics g) {
+                if (getModel().isArmed()) {
+                    g.setColor(new Color(0xEEEEEE));
+                    this.setBorder(new BorderRadius());
+                } else {
+                    g.setColor(getBackground());
+                }
+                g.fillRoundRect(0, 0, getSize().width - 1, getSize().height - 1,10,10);
+                super.paintComponent(g);
+            }
+        };
+        propertyModularMachinery.setFont(new Font("微软雅黑", Font.BOLD, 16));
+        propertyModularMachinery.setForeground(new Color(7368816));
+        propertyModularMachinery.setBackground(new Color(0xEEEEEE));
+        propertyModularMachinery.setBorder(new BorderRadius());
+        propertyModularMachinery.setBorderPainted(false);
+        propertyModularMachinery.setOpaque(false);
+        //propertyModularMachinery.setContentAreaFilled(false);
+        propertyModularMachinery.setFocusPainted(false);
+        propertyModularMachinery.setBounds(93, 398, 265, 53);
+        panel.add(propertyModularMachinery);
         propertyModularMachinery.addActionListener(e -> {
             createNewWindowByButton("Json(Modular Machinery) Editor", 800, 600);
         });
-        /*
+
         panel.add(propertyModularMachinery);
-        JButton propertyARXML = new JButton("XML(Advanced Rocketry)");
-        propertyARXML.setBounds(10, 160, 200, 25);
+        JButton propertyARXML = new JButton("Advanced Rocketry", new ImageIcon(new URL("http://timicasto.sukazyo.cc:12000/xml.png"))) {
+            @Override
+            protected void paintComponent(Graphics g) {
+                if (getModel().isArmed()) {
+                    g.setColor(new Color(0xEEEEEE));
+                    this.setBorder(new BorderRadius());
+                } else {
+                    g.setColor(getBackground());
+                }
+                g.fillRoundRect(0, 0, getSize().width - 1, getSize().height - 1,10,10);
+                super.paintComponent(g);
+            }
+        };
+        propertyARXML.setFont(new Font("微软雅黑", Font.BOLD, 16));
+        propertyARXML.setForeground(new Color(7368816));
+        propertyARXML.setBackground(new Color(0xEEEEEE));
+        propertyARXML.setBorder(new BorderRadius());
+        propertyARXML.setBorderPainted(false);
+        propertyARXML.setOpaque(false);
+        //propertyARXML.setContentAreaFilled(false);
+        propertyARXML.setFocusPainted(false);
+        propertyARXML.setBounds(93, 473, 265, 53);
         propertyARXML.addActionListener(e -> {
             EditorHandler.initARXML(Objects.requireNonNull(createNewWindowByButton("XML(Advanced Rocketry) Editor", 1024, 768)));
         });
         panel.add(propertyARXML);
-        JButton propertyCM3 = new JButton("Json(Compact Machines 3)");
-        propertyCM3.setBounds(10, 200, 200, 25);
+        JButton propertyCM3 = new JButton("Compact Machines", new ImageIcon(new URL("http://timicasto.sukazyo.cc:12000/json.png"))) {
+            @Override
+            protected void paintComponent(Graphics g) {
+                if (getModel().isArmed()) {
+                    g.setColor(new Color(0xEEEEEE));
+                    this.setBorder(new BorderRadius());
+                } else {
+                    g.setColor(getBackground());
+                }
+                g.fillRoundRect(0, 0, getSize().width - 1, getSize().height - 1,10,10);
+                super.paintComponent(g);
+            }
+        };
+        JLabel bg = new JLabel(new ImageIcon(new URL("http://timicasto.sukazyo.cc:12000/randompicture.php")));
+        bg.setBounds(492, 211, 695, 391);
+        bg.setBorder(new BorderRadius(new Color(0xFFFFFF)));
+        panel.add(bg);
+        propertyCM3.setBounds(93, 549, 265, 53);
+        propertyCM3.setFont(new Font("微软雅黑", Font.BOLD, 16));
+        propertyCM3.setForeground(new Color(7368816));
+        propertyCM3.setBackground(new Color(0xEEEEEE));
+        propertyCM3.setBorder(new BorderRadius());
+        propertyCM3.setBorderPainted(false);
+        propertyCM3.setOpaque(false);
+        //propertyCM3.setContentAreaFilled(false);
+        propertyCM3.setFocusPainted(false);
         propertyCM3.addActionListener(e -> {
             createNewWindowByButton("Json(Compact Machines 3) Editor", 800, 600);
         });
-        panel.add(propertyCM3);*/
+        panel.add(propertyCM3);
 
         URL url = new URL("http://timicasto.sukazyo.cc:12000/CreateInstance.png");
         Icon instance = new ImageIcon(url);
@@ -183,10 +261,10 @@ public class Main {
         JLabel label = new JLabel("Select A Property");
         label.setOpaque(true);
         label.setBounds(10, 20, 120, 25);
-        panel.add(label);
+        panel.add(label);*/
         propertyCrT.addActionListener(e -> {
             EditorHandler.initCrT(Objects.requireNonNull(createNewWindowByButton("ZenScript(Craft Tweaker) editor", 1600, 900)));
-        });*/
+        });
     }
 
     @Deprecated
