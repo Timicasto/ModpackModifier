@@ -274,6 +274,129 @@ public class EditorHandler {
         public static void createNewPlanetFrame() {
             JFrame frame = createNormalFrame("Create a new Planet");
             JPanel panel = new JPanel();
+            panel.setLayout(null);
+            JLabel name = new JLabel("Name");
+            name.setBounds(20, 20, 200, 20);
+            panel.add(name);
+            JTextField nameField = new JTextField();
+            nameField.setBounds(240, 20, 250, 20);
+            panel.add(nameField);
+
+            JLabel gas = new JLabel("Gas(Nullable)");
+            gas.setBounds(20, 40, 200, 20);
+            panel.add(gas);
+            JTextField gasField = new JTextField();
+            gasField.setBounds(240, 40, 250, 20);
+            panel.add(gasField);
+
+            JLabel filter = new JLabel("Filter Block");
+            filter.setBounds(20, 60, 200, 20);
+            panel.add(filter);
+            JTextField filterField = new JTextField();
+            filterField.setBounds(240, 60, 250, 20);
+            panel.add(filterField);
+
+            JLabel atmosphere = new JLabel("Atmosphere Density");
+            atmosphere.setBounds(20, 80, 200, 20);
+            panel.add(atmosphere);
+            JTextField atmosphereField = new JTextField();
+            atmosphereField.setBounds(240, 80, 250, 20);
+            panel.add(atmosphereField);
+
+            JLabel dimID = new JLabel("Dimension ID");
+            dimID.setBounds(20, 100, 200, 20);
+            panel.add(dimID);
+            JTextField idField = new JTextField();
+            idField.setBounds(240, 100, 250, 20);
+            panel.add(idField);
+
+            JLabel oceanBlock = new JLabel("Ocean Block");
+            oceanBlock.setBounds(20, 120, 200, 20);
+            panel.add(oceanBlock);
+            JTextField oceanBlockField = new JTextField();
+            oceanBlockField.setBounds(240, 120, 250, 20);
+            panel.add(oceanBlockField);
+
+            JLabel hasRing = new JLabel("Whether there is a ring");
+            hasRing.setBounds(20, 140, 200, 20);
+            panel.add(hasRing);
+            JTextField hasRingField = new JTextField();
+            hasRingField.setBounds(240, 140, 250, 20);
+            panel.add(hasRingField);
+
+            JLabel gasGiant = new JLabel("Is it a gas giant");
+            gasGiant.setBounds(20, 160, 200, 20);
+            panel.add(gasGiant);
+            JTextField gasGiantField = new JTextField();
+            gasGiantField.setBounds(240, 160, 250, 20);
+            panel.add(gasGiantField);
+
+            JLabel gravitationalMultiplier = new JLabel("Gravity magnification");
+            gravitationalMultiplier.setBounds(20, 180, 200, 20);
+            panel.add(gravitationalMultiplier);
+            JTextField gravitationalMultiplierField = new JTextField();
+            gravitationalMultiplierField.setBounds(240, 180, 250, 20);
+            panel.add(gravitationalMultiplierField);
+
+            JLabel orbitalDistance = new JLabel("Orbital Distance");
+            orbitalDistance.setBounds(20, 200, 200, 20);
+            panel.add(orbitalDistance);
+            JTextField orbitalDistanceField = new JTextField();
+            orbitalDistanceField.setBounds(240, 200, 250, 20);
+            panel.add(orbitalDistanceField);
+
+            JLabel orbitalPhi = new JLabel("Orbital φ");
+            orbitalPhi.setBounds(20, 220, 200, 20);
+            panel.add(orbitalPhi);
+            JTextField orbitalPhiField = new JTextField();
+            orbitalPhiField.setBounds(240, 220, 250, 20);
+            panel.add(orbitalPhiField);
+
+            JLabel orbitalTheta = new JLabel("Orbital θ");
+            orbitalTheta.setBounds(20, 240, 200, 20);
+            panel.add(orbitalTheta);
+            JTextField orbitalThetaField = new JTextField();
+            orbitalThetaField.setBounds(240, 240, 250, 20);
+            panel.add(orbitalThetaField);
+
+            JLabel fogColor = new JLabel("Fog Color(HEX)");
+            fogColor.setBounds(20, 260, 200, 20);
+            panel.add(fogColor);
+            JTextField fogColorField = new JTextField();
+            fogColorField.setBounds(240, 260, 250, 20);
+            panel.add(fogColorField);
+
+            JLabel skyColor = new JLabel("Sky Color(HEX)");
+            skyColor.setBounds(20, 280, 200, 20);
+            panel.add(skyColor);
+            JTextField skyColorField = new JTextField();
+            skyColorField.setBounds(240, 280, 250, 20);
+            panel.add(skyColorField);
+
+            JLabel rotationalPeriod = new JLabel("Ticks per day");
+            rotationalPeriod.setBounds(20, 300, 200, 20);
+            panel.add(rotationalPeriod);
+            JTextField rotationalPeriodField = new JTextField();
+            rotationalPeriodField.setBounds(240, 300, 250, 20);
+            panel.add(rotationalPeriodField);
+
+            JLabel seaLevel = new JLabel("Sea Level");
+            seaLevel.setBounds(20, 320, 200, 20);
+            panel.add(seaLevel);
+            JTextField seaLevelField = new JTextField();
+            seaLevelField.setBounds(240, 320, 250, 20);
+            panel.add(seaLevelField);
+
+            JLabel parentStar = new JLabel("Parent star");
+            parentStar.setBounds(20, 340, 340, 20);
+            panel.add(parentStar);
+            JTextField parentStarField = new JTextField();
+            parentStarField.setBounds(240, 340, 250, 20);
+            panel.add(parentStarField);
+
+            JButton button = new JButton("Finish");
+            button.setBounds(200, 400, 160, 60);
+            panel.add(button);
             frame.add(panel);
         }
 
