@@ -1,10 +1,12 @@
 package timicasto.modpackmodifier.tweak.arobj;
 
 import java.awt.*;
+import java.util.Map;
 
 public class Astronomical {
     public static class Star {
         public String name;
+        public Map<Integer, Planet> planets;
         public int temp, x, y, numPlanets, id;
 
         public Star(String name, int temp, int x, int y, int numPlanets, int id) {
