@@ -1,6 +1,7 @@
 package timicasto.modpackmodifier.editors;
 
 import timicasto.modpackmodifier.gui.PopMenu;
+import timicasto.modpackmodifier.io.XMLGenerator;
 import timicasto.modpackmodifier.io.ZSGenerator;
 import timicasto.modpackmodifier.tweak.ARHelper;
 import timicasto.modpackmodifier.tweak.ZSHelper;
@@ -16,9 +17,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Map;
+import java.util.*;
 
 public class EditorHandler {
 
@@ -320,15 +319,15 @@ public class EditorHandler {
             JLabel hasRing = new JLabel("Whether there is a ring");
             hasRing.setBounds(20, 140, 200, 20);
             panel.add(hasRing);
-            JTextField hasRingField = new JTextField();
-            hasRingField.setBounds(240, 140, 250, 20);
+            JCheckBox hasRingField = new JCheckBox();
+            hasRingField.setBounds(240, 140, 20, 20);
             panel.add(hasRingField);
 
             JLabel gasGiant = new JLabel("Is it a gas giant");
             gasGiant.setBounds(20, 160, 200, 20);
             panel.add(gasGiant);
-            JTextField gasGiantField = new JTextField();
-            gasGiantField.setBounds(240, 160, 250, 20);
+            JCheckBox gasGiantField = new JCheckBox();
+            gasGiantField.setBounds(240, 160, 20, 20);
             panel.add(gasGiantField);
 
             JLabel gravitationalMultiplier = new JLabel("Gravity magnification");
@@ -390,14 +389,29 @@ public class EditorHandler {
             JLabel parentStar = new JLabel("Parent star");
             parentStar.setBounds(20, 340, 340, 20);
             panel.add(parentStar);
-            JTextField parentStarField = new JTextField();
-            parentStarField.setBounds(240, 340, 250, 20);
-            panel.add(parentStarField);
+            Astronomical.Star[] stars = new Astronomical.Star[ARHelper.stars.size()];
+            String[] names = new String[ARHelper.stars.size()];
+            Map<String, Astronomical.Star> transformation = new HashMap<>();
+            for (int key : ARHelper.stars.keySet()) {
+                stars[key] = ARHelper.stars.get(key);
+            }
+            for (int i = 0; i < stars.length; i++) {
+                transformation.put(stars[i].name, stars[i]);
+                names[i] = stars[i].name;
+            }
+
+            JComboBox<? extends String> parentStarInput = new JComboBox<>(names);
+            parentStarInput.setBounds(240, 340, 250, 20);
+            panel.add(parentStarInput);
 
             JButton button = new JButton("Finish");
             button.setBounds(200, 400, 160, 60);
             panel.add(button);
             frame.add(panel);
+
+            button.addActionListener(e -> {
+                transformation.get(Objects.requireNonNull(parentStarInput.getSelectedItem()).toString()).planets.put(Integer.parseInt(idField.getText()), new Astronomical.Planet(nameField.getText(), hasRingField.isSelected(), gasGiantField.isSelected(), gasField.getText(), filterField.getText(), oceanBlockField.getText(), Integer.parseInt(atmosphereField.getText()), Integer.parseInt(gravitationalMultiplierField.getText()), Integer.parseInt(orbitalDistanceField.getText()), Integer.parseInt(orbitalThetaField.getText()), Integer.parseInt(orbitalPhiField.getText()), Integer.parseInt(rotationalPeriodField.getText()), Integer.parseInt(seaLevelField.getText()), Integer.parseInt(idField.getText()), new Color(Integer.parseInt(skyColorField.getText())), new Color(Integer.parseInt(fogColorField.getText())), new String[]{}));
+            });
         }
 
 
