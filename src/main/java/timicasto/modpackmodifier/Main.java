@@ -1,17 +1,16 @@
 package timicasto.modpackmodifier;
 
-import timicasto.modpackmodifier.gui.BorderRadius;
-import timicasto.modpackmodifier.gui.CustomJFrame;
-import timicasto.modpackmodifier.gui.PopMenu;
 import timicasto.modpackmodifier.editors.EditorHandler;
+import timicasto.modpackmodifier.gui.BorderRadius;
+import timicasto.modpackmodifier.gui.PopMenu;
 import timicasto.modpackmodifier.tweak.ARHelper;
 import timicasto.modpackmodifier.tweak.arobj.Astronomical;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.geom.RoundRectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -43,7 +42,6 @@ public class Main {
             }
         });
         ARHelper.stars.put(0, new Astronomical.Star("", 0, 0, 0, 0, 0));
-        ARHelper.planets.put(0, new Astronomical.Planet("", false, false, "", "", "", 0, 0, 0, 0, 0, 0, 0, 0, new Color(0, 0, 0), new Color(0, 0, 0), new String[]{}));
     }
 
     /**
@@ -60,7 +58,6 @@ public class Main {
     /**
      * Program main window initialization method
      *
-     * @throws IOException
      */
     public static void createWindow() throws IOException {
         JPanel panel = new JPanel();
@@ -152,9 +149,7 @@ public class Main {
         propertyModularMachinery.setFocusPainted(false);
         propertyModularMachinery.setBounds(93, 398, 265, 53);
         panel.add(propertyModularMachinery);
-        propertyModularMachinery.addActionListener(e -> {
-            createNewWindowByButton("Json(Modular Machinery) Editor", 800, 600);
-        });
+        propertyModularMachinery.addActionListener(e -> createNewWindowByButton("Json(Modular Machinery) Editor", 800, 600));
 
         panel.add(propertyModularMachinery);
         JButton propertyARXML = new JButton("Advanced Rocketry", new ImageIcon(new URL("http://timicasto.sukazyo.cc:12000/xml.png"))) {
@@ -179,9 +174,7 @@ public class Main {
         //propertyARXML.setContentAreaFilled(false);
         propertyARXML.setFocusPainted(false);
         propertyARXML.setBounds(93, 473, 265, 53);
-        propertyARXML.addActionListener(e -> {
-            EditorHandler.initARXML(Objects.requireNonNull(createNewWindowByButton("XML(Advanced Rocketry) Editor", 1024, 768)));
-        });
+        propertyARXML.addActionListener(e -> EditorHandler.initARXML(Objects.requireNonNull(createNewWindowByButton("XML(Advanced Rocketry) Editor", 1024, 768))));
         panel.add(propertyARXML);
         JButton propertyCM3 = new JButton("Compact Machines", new ImageIcon(new URL("http://timicasto.sukazyo.cc:12000/json.png"))) {
             @Override
@@ -196,7 +189,9 @@ public class Main {
                 super.paintComponent(g);
             }
         };
-        JLabel bg = new JLabel(new ImageIcon(new URL("http://timicasto.sukazyo.cc:12000/randompicture.php")));
+        BufferedImage image = ImageIO.read(new URL("http://timicasto.sukazyo.cc:12000/randompicture.php"));
+        image.getScaledInstance(492, 211, Image.SCALE_DEFAULT);
+        JLabel bg = new JLabel(new ImageIcon(image));
         bg.setBounds(492, 211, 695, 391);
         bg.setBorder(new BorderRadius(new Color(0xFFFFFF)));
         panel.add(bg);
@@ -209,13 +204,15 @@ public class Main {
         propertyCM3.setOpaque(false);
         //propertyCM3.setContentAreaFilled(false);
         propertyCM3.setFocusPainted(false);
-        propertyCM3.addActionListener(e -> {
-            createNewWindowByButton("Json(Compact Machines 3) Editor", 800, 600);
-        });
+        propertyCM3.addActionListener(e -> createNewWindowByButton("Json(Compact Machines 3) Editor", 800, 600));
         panel.add(propertyCM3);
 
         URL url = new URL("http://timicasto.sukazyo.cc:12000/CreateInstance.png");
-        Icon instance = new ImageIcon(url);
+        BufferedImage instanceImage = ImageIO.read(url);
+        BufferedImage scaled1 = new BufferedImage((int) (instanceImage.getWidth() * 0.6), (int) (instanceImage.getHeight() * 0.6), BufferedImage.TYPE_INT_ARGB);
+        Graphics graphics = scaled1.getGraphics();
+        graphics.drawImage(instanceImage, 0, 0, scaled1.getWidth(), scaled1.getHeight(), null);
+        Icon instance = new ImageIcon(scaled1);
 
         JButton newInstance = new JButton("    新建实例", instance) {
             @Override
@@ -262,16 +259,22 @@ public class Main {
         label.setOpaque(true);
         label.setBounds(10, 20, 120, 25);
         panel.add(label);*/
-        propertyCrT.addActionListener(e -> {
-            EditorHandler.initCrT(Objects.requireNonNull(createNewWindowByButton("ZenScript(Craft Tweaker) editor", 1600, 900)));
-        });
+        propertyCrT.addActionListener(e -> EditorHandler.initCrT(Objects.requireNonNull(createNewWindowByButton("ZenScript(Craft Tweaker) editor", 1600, 900))));
     }
 
     @Deprecated
-    public static void setBak(JPanel panel) throws MalformedURLException {
+    public static void setBak(JPanel panel) {
         panel.setLayout(null);
-        ImageIcon img = new ImageIcon(new URL("http://timicasto.sukazyo.cc:12000/randompicture.php"));
-        JLabel background = new JLabel(img);
+        BufferedImage bgSrc = null;
+        try {
+            bgSrc = ImageIO.read(new URL("http://timicasto.sukazyo.cc:12000/randompicture.php"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        BufferedImage scaled = new BufferedImage(960, 540, BufferedImage.TYPE_INT_ARGB);
+        Graphics graphics = scaled.getGraphics();
+        graphics.drawImage(bgSrc, 0, 0, 960, 540, null);
+        JLabel background = new JLabel(new ImageIcon(scaled));
         background.setBounds(0, 0, 960, 540);
         panel.add(background);
     }

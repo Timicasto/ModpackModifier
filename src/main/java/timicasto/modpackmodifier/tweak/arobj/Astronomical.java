@@ -1,12 +1,13 @@
 package timicasto.modpackmodifier.tweak.arobj;
 
 import java.awt.*;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Astronomical {
     public static class Star {
         public String name;
-        public Map<Integer, Planet> planets;
+        public Map<Integer, Planet> planets = new HashMap<>();
         public int temp, x, y, numPlanets, id;
 
         public Star(String name, int temp, int x, int y, int numPlanets, int id) {
@@ -23,13 +24,14 @@ public class Astronomical {
     }
     public static class Planet {
         public String name, gas, filterBlock, oceanBlock;
-        public boolean hasRing, gasGiant;
+        public boolean hasRing, gasGiant, isKnown;
         public int atmosphereDensity, gravitationalMultiplier, orbitalDistance, orbitalTheta, orbitalPhi, rotationalPeriod, seaLevel, dimID;
         public String[] artifacts;
         public Color fogColor, skyColor;
 
-        public Planet(String name, boolean hasRing, boolean gasGiant, String gas, String filterBlock, String oceanBlock, int atmosphereDensity, int gravitationalMultiplier, int orbitalDistance, int orbitalTheta, int orbitalPhi, int rotationalPeriod, int seaLevel, int dimID, Color skyColor, Color fogColor, String[] artifacts) {
+        public Planet(String name, boolean isKnown, boolean hasRing, boolean gasGiant, String gas, String filterBlock, String oceanBlock, int atmosphereDensity, int gravitationalMultiplier, int orbitalDistance, int orbitalTheta, int orbitalPhi, int rotationalPeriod, int seaLevel, int dimID, Color skyColor, Color fogColor, String[] artifacts) {
             this.name = name;
+            this.isKnown = isKnown;
             this.gas = gas;
             this.filterBlock = filterBlock;
             this.artifacts = artifacts;

@@ -127,7 +127,7 @@ public class EditorHandler {
         frame.setContentPane(menu);
         frame.setVisible(true);
         newFile.addActionListener(e -> {
-
+            XMLGenerator.getXML(ARHelper.stars);
         });
 
         save.addActionListener(e -> {
@@ -386,6 +386,13 @@ public class EditorHandler {
             seaLevelField.setBounds(240, 320, 250, 20);
             panel.add(seaLevelField);
 
+            JLabel isKnown = new JLabel("Is Known?");
+            isKnown.setBounds(20, 380, 200, 20);
+            panel.add(isKnown);
+            JCheckBox isKnownField = new JCheckBox();
+            isKnownField.setBounds(240, 380, 20, 20);
+            panel.add(isKnownField);
+
             JLabel parentStar = new JLabel("Parent star");
             parentStar.setBounds(20, 340, 340, 20);
             panel.add(parentStar);
@@ -405,13 +412,11 @@ public class EditorHandler {
             panel.add(parentStarInput);
 
             JButton button = new JButton("Finish");
-            button.setBounds(200, 400, 160, 60);
+            button.setBounds(200, 440, 160, 60);
             panel.add(button);
             frame.add(panel);
 
-            button.addActionListener(e -> {
-                transformation.get(Objects.requireNonNull(parentStarInput.getSelectedItem()).toString()).planets.put(Integer.parseInt(idField.getText()), new Astronomical.Planet(nameField.getText(), hasRingField.isSelected(), gasGiantField.isSelected(), gasField.getText(), filterField.getText(), oceanBlockField.getText(), Integer.parseInt(atmosphereField.getText()), Integer.parseInt(gravitationalMultiplierField.getText()), Integer.parseInt(orbitalDistanceField.getText()), Integer.parseInt(orbitalThetaField.getText()), Integer.parseInt(orbitalPhiField.getText()), Integer.parseInt(rotationalPeriodField.getText()), Integer.parseInt(seaLevelField.getText()), Integer.parseInt(idField.getText()), new Color(Integer.parseInt(skyColorField.getText())), new Color(Integer.parseInt(fogColorField.getText())), new String[]{}));
-            });
+            button.addActionListener(e -> transformation.get((String)parentStarInput.getSelectedItem()).planets.put(Integer.parseInt(idField.getText()), new Astronomical.Planet(nameField.getText(), isKnownField.isSelected(), hasRingField.isSelected(), gasGiantField.isSelected(), gasField.getText(), filterField.getText(), oceanBlockField.getText(), Integer.parseInt(atmosphereField.getText()), Integer.parseInt(gravitationalMultiplierField.getText()), Integer.parseInt(orbitalDistanceField.getText()), Integer.parseInt(orbitalThetaField.getText()), Integer.parseInt(orbitalPhiField.getText()), Integer.parseInt(rotationalPeriodField.getText()), Integer.parseInt(seaLevelField.getText()), Integer.parseInt(idField.getText()), new Color(Integer.parseInt(skyColorField.getText())), new Color(Integer.parseInt(fogColorField.getText())), new String[]{})));
         }
 
 
