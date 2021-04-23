@@ -406,6 +406,8 @@ public class EditorHandler {
                 transformation.put(stars[i].name, stars[i]);
                 names[i] = stars[i].name;
             }
+            System.out.println(Arrays.toString(stars));
+            System.out.println(Arrays.toString(names));
 
             JComboBox<? extends String> parentStarInput = new JComboBox<>(names);
             parentStarInput.setBounds(240, 340, 250, 20);
@@ -416,7 +418,7 @@ public class EditorHandler {
             panel.add(button);
             frame.add(panel);
 
-            button.addActionListener(e -> transformation.get((String)parentStarInput.getSelectedItem()).planets.put(Integer.parseInt(idField.getText()), new Astronomical.Planet(nameField.getText(), isKnownField.isSelected(), hasRingField.isSelected(), gasGiantField.isSelected(), gasField.getText(), filterField.getText(), oceanBlockField.getText(), Integer.parseInt(atmosphereField.getText()), Integer.parseInt(gravitationalMultiplierField.getText()), Integer.parseInt(orbitalDistanceField.getText()), Integer.parseInt(orbitalThetaField.getText()), Integer.parseInt(orbitalPhiField.getText()), Integer.parseInt(rotationalPeriodField.getText()), Integer.parseInt(seaLevelField.getText()), Integer.parseInt(idField.getText()), new Color(Integer.parseInt(skyColorField.getText())), new Color(Integer.parseInt(fogColorField.getText())), new String[]{})));
+            button.addActionListener(e -> transformation.get(parentStarInput.getSelectedItem()).planets.put(Integer.parseInt(idField.getText()), new Astronomical.Planet(nameField.getText(), isKnownField.isSelected(), hasRingField.isSelected(), gasGiantField.isSelected(), gasField.getText(), filterField.getText(), oceanBlockField.getText(), Integer.parseInt(atmosphereField.getText()), Integer.parseInt(gravitationalMultiplierField.getText()), Integer.parseInt(orbitalDistanceField.getText()), Integer.parseInt(orbitalThetaField.getText()), Integer.parseInt(orbitalPhiField.getText()), Integer.parseInt(rotationalPeriodField.getText()), Integer.parseInt(seaLevelField.getText()), Integer.parseInt(idField.getText()), new Color(Integer.parseInt(skyColorField.getText())), new Color(Integer.parseInt(fogColorField.getText())), new String[]{})));
         }
 
 

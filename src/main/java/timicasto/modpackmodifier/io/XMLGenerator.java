@@ -26,6 +26,7 @@ public class XMLGenerator {
             document.setXmlStandalone(true);
 
             Element root = document.createElement("galaxy");
+            document.appendChild(root);
 
             for (int i : stars.keySet()) {
                 Element star = document.createElement("star");
@@ -54,7 +55,7 @@ public class XMLGenerator {
                     orbitalDistance.setTextContent(String.valueOf(stars.get(i).planets.get(j).orbitalDistance));
                     planet.appendChild(orbitalDistance);
                     Element orbitalTheta = document.createElement("orbitalTheta");
-                    orbitalTheta.setTextContent(String.valueOf(stars.get(i).planets.get(j)));
+                    orbitalTheta.setTextContent(String.valueOf(stars.get(i).planets.get(j).orbitalTheta));
                     planet.appendChild(orbitalTheta);
                     Element orbitalPhi = document.createElement("orbitalPhi");
                     orbitalPhi.setTextContent(String.valueOf(stars.get(i).planets.get(j).orbitalPhi));
