@@ -131,10 +131,7 @@ public class EditorHandler {
         });
 
         save.addActionListener(e -> {
-            for (int i = 0 ; i < ZSHelper.operations.size() ; i++) {
-                ZSGenerator.commands.add(ZSGenerator.ZSLineCommand.generateCommandByItemIO(ZSHelper.operations.get(i + 1).type, ZSHelper.operations.get(i + 1).inputs, ZSHelper.operations.get(i + 1).output));
-            }
-            File fileSave = new File("./generatedRecipe.zs");
+            File fileSave = new File("./planetDefs.xml");
             if (!fileSave.isFile()) {
                 try {
                     fileSave.createNewFile();
@@ -144,20 +141,14 @@ public class EditorHandler {
             }
             BufferedWriter writer = null;
             try {
-                writer = new BufferedWriter(new FileWriter("./generatedRecipe.zs"));
+                writer = new BufferedWriter(new FileWriter("./planetDefs.xml"));
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
-            for (String s : ZSGenerator.commands) {
-                try {
-                    assert writer != null;
-                    writer.write(s + "\r\n");
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
+            try {writer.write(XMLGenerator.getXML(ARHelper.stars).toString());} catch (IOException ioException) {
+                ioException.printStackTrace();
             }
             try {
-                assert writer != null;
                 writer.close();
             } catch (IOException ioException) {
                 ioException.printStackTrace();

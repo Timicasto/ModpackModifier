@@ -76,8 +76,8 @@ public class XMLGenerator {
                     fillerBlock.setTextContent(stars.get(i).planets.get(j).filterBlock);
                     planet.appendChild(fillerBlock);
                     star.appendChild(planet);
+                    root.appendChild(star);
                 }
-                root.appendChild(star);
                 TransformerFactory factory1 = TransformerFactory.newInstance();
                 Transformer transformer = factory1.newTransformer();
                 transformer.setOutputProperty(OutputKeys.INDENT, "yes");
