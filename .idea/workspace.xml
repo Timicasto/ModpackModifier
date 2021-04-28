@@ -29,10 +29,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d930df7c-f184-4426-812f-995af7f8152b" name="Default Changelist" comment="完成XML保存，修复了生成多个文档的Bug">
-      <change afterPath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/io/CMJsonGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/tweak/CMHelper.java" afterDir="false" />
+    <list default="true" id="d930df7c-f184-4426-812f-995af7f8152b" name="Default Changelist" comment="完成CM3 Json部分整理 4-27午">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/io/CMJsonGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/io/CMJsonGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/tweak/CMHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/tweak/CMHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619325494248</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="完成CM3 Json部分整理 4-27午">
+      <created>1619500173172</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1619500173172</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -270,7 +277,8 @@
     <MESSAGE value="完成AR部分数据处理" />
     <MESSAGE value="修复了XML生成空字符串的Bug" />
     <MESSAGE value="完成XML保存，修复了生成多个文档的Bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成XML保存，修复了生成多个文档的Bug" />
+    <MESSAGE value="完成CM3 Json部分整理 4-27午" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成CM3 Json部分整理 4-27午" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

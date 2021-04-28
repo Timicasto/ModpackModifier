@@ -1,5 +1,8 @@
 package timicasto.modpackmodifier.io;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import timicasto.modpackmodifier.tweak.CMHelper;
 
@@ -7,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CMJsonGenerator {
-    public static String generateJson(String[][][] gradients, String input, String output, CMHelper.Attributes attributes) {
+    public static String generateJson(String[][][] gradients, String input, String output, CMHelper.Attributes attributes, CMHelper.Item... variables) {
         JsonObject container = new JsonObject();
         container.addProperty("name", attributes.name);
         container.addProperty("disabled", attributes.disabled ? "true" : "false"); // disabled
@@ -48,7 +51,27 @@ public class CMJsonGenerator {
         container.addProperty("catalyst", catalyst.get(0)); // catalyst
         container.addProperty("catalyst-meta", catalyst.get(1)); // catalyst meta
         container.addProperty("catalyst-nbt", catalyst.get(2)); // catalyst nbt
-
+        Gson gson = new Gson();
+        JsonObject input_types = new JsonObject();
+        for (int i = 0; i < variables.length; i++) {
+            JsonElement itemVariable = gson.toJsonTree(variables[i]);
+            input_types.add(i == 1 ? "a" : i == 2 ? "b" : i == 3 ? "c" : i == 4 ? "d" : i == 5 ? "e" : "f", itemVariable);
+        }
+        container.add("input-types", input_types);
+        JsonArray shape = new JsonArray();
+        for (int i = 0; i < gradients.length; i++) {
+            JsonArray y = new JsonArray();
+            for (int j = 0; j < gradients.length; j++) {
+                JsonArray x = new JsonArray();
+                for (int k = 0; k < gradients.length; k++) {
+                    x.add(gradients[j][i][k]);
+                }
+                y.add(x);
+            }
+            shape.add(y);
+        }
+        container.add("shape", shape);
+        System.out.println(container.getAsString());
         return container.getAsString();
     }
 }
