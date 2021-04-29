@@ -29,10 +29,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d930df7c-f184-4426-812f-995af7f8152b" name="Default Changelist" comment="完成CM3 Json部分整理 4-27午">
+    <list default="true" id="d930df7c-f184-4426-812f-995af7f8152b" name="Default Changelist" comment="简单完成Json全部生成，但未经调试 4-28午">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/io/CMJsonGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/io/CMJsonGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/tweak/CMHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/tweak/CMHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/editors/EditorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/editors/EditorHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619500173172</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="简单完成Json全部生成，但未经调试 4-28午">
+      <created>1619586448957</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1619586448957</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -278,7 +284,8 @@
     <MESSAGE value="修复了XML生成空字符串的Bug" />
     <MESSAGE value="完成XML保存，修复了生成多个文档的Bug" />
     <MESSAGE value="完成CM3 Json部分整理 4-27午" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成CM3 Json部分整理 4-27午" />
+    <MESSAGE value="简单完成Json全部生成，但未经调试 4-28午" />
+    <option name="LAST_COMMIT_MESSAGE" value="简单完成Json全部生成，但未经调试 4-28午" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -289,7 +296,7 @@
         </breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/editors/EditorHandler.java</url>
-          <line>625</line>
+          <line>664</line>
           <properties class="timicasto.modpackmodifier.editors.EditorHandler" method="refreshARDisplay">
             <option name="EMULATED" value="true" />
           </properties>
@@ -305,7 +312,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/timicasto/modpackmodifier/editors/EditorHandler.java</url>
-          <line>411</line>
+          <line>413</line>
           <properties>
             <option name="lambda-ordinal" value="0" />
           </properties>

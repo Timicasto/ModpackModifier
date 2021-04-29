@@ -192,6 +192,8 @@ public class EditorHandler {
             initARXMLEvent();
         }
 
+
+
         private void initARXMLEvent() {
             ADD_STAR.addActionListener(e -> createNewStarFrame());
             ADD_PLANET.addActionListener(e -> createNewPlanetFrame());
@@ -422,6 +424,43 @@ public class EditorHandler {
         frame.setVisible(true);
         frame.setIconImage(PopMenu.icon);
         return frame;
+    }
+
+    static class CM3PopMenu extends JPanel {
+        JMenuItem ADD_3, ADD_5, ADD_7, ADD_9, ADD_11, ADD_13;
+
+        public CM3PopMenu() {
+            JPopupMenu menu = new JPopupMenu();
+            menu.add(ADD_3 = new JMenuItem("Create a 3*3*3 recipe"));
+            menu.add(ADD_5 = new JMenuItem("Create a 5*5*5 recipe"));
+            menu.add(ADD_7 = new JMenuItem("Create a 7*7*7 recipe"));
+            menu.add(ADD_9 = new JMenuItem("Create a 9*9*9 recipe"));
+            menu.add(ADD_11 = new JMenuItem("Create a 11*11*11 recipe"));
+            menu.add(ADD_13 = new JMenuItem("Create a 13*13*13 recipe"));
+            addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    System.out.println("Pressed mouse button " + e.getButton());
+                    if (e.getButton() == MouseEvent.BUTTON3) {
+                        menu.show(CM3PopMenu.this, e.getX(), e.getY());
+                    }
+                }
+            });
+            initCM3Event();
+        }
+
+        public void initCM3Event() {
+            ADD_3.addActionListener(e -> createRecipeFrame(3));
+            ADD_5.addActionListener(e -> createRecipeFrame(5));
+            ADD_7.addActionListener(e -> createRecipeFrame(7));
+            ADD_9.addActionListener(e -> createRecipeFrame(9));
+            ADD_11.addActionListener(e -> createRecipeFrame(11));
+            ADD_13.addActionListener(e -> createRecipeFrame(13));
+        }
+
+        public static void createRecipeFrame(int size) {
+
+        }
     }
 
 
